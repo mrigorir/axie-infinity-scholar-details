@@ -1,11 +1,9 @@
-import { getSlpStats } from './services/API';
+import React from 'react';
+import Home from './components/Home';
 
 function App() {
-  getSlpStats();
   return (
-    <>
-      <h1>Start!</h1>
-    </>
+    <Home />
   );
 }
 

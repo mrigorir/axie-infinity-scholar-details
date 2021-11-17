@@ -1,14 +1,15 @@
-import { get } from "immer/dist/internal";
-import { getSlpStats, getLunacia, getMmr, getXpAxie } from "../services/API";
+import {
+  getSlpStats, getLunacia, getMmr, getXpAxie,
+} from '../services/API';
 
-//default
+// default
 const initialState = [
   {
     slpStats: 'loading',
     lunacia: 'unavailable',
     mmr: 'loading',
     axieExp: 'loading',
-  }
+  },
 ];
 
 // action indicators
@@ -44,6 +45,7 @@ const getMmrAction = () => async (dispatch) => {
 
 const getXpAxieAction = () => async (dispatch) => {
   const xpAxie = await getXpAxie();
+  console.log(xpAxie);
   dispatch({
     type: GET_XP_AXIE,
     payload: xpAxie,
@@ -66,4 +68,6 @@ const detailsReducer = (state = initialState, action) => {
   }
 };
 
-export { detailsReducer, getLunaciaAction, getMmrAction, getSlpStatsAction, getXpAxieAction };
+export {
+  detailsReducer, getLunaciaAction, getMmrAction, getSlpStatsAction, getXpAxieAction,
+};
