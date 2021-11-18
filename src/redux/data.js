@@ -5,10 +5,16 @@ import {
 // default
 const initialState = [
   {
-    slpStats: 'loading',
-    lunacia: 'unavailable',
-    mmr: 'loading',
-    axieExp: 'loading',
+    totalSLP: 0,
+    claimableTotal: 0,
+    lastClaim: 0,
+    nextClaim: 0,
+    lifetimeSLP: 0,
+    roninSLP: 0,
+    inGameSLP: 0,
+    yesterdaySLP: 0,
+    todaySoFar: 0,
+    average: 0,
   },
 ];
 
@@ -45,7 +51,6 @@ const getMmrAction = () => async (dispatch) => {
 
 const getXpAxieAction = () => async (dispatch) => {
   const xpAxie = await getXpAxie();
-  console.log(xpAxie);
   dispatch({
     type: GET_XP_AXIE,
     payload: xpAxie,

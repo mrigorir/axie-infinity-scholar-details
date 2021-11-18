@@ -1,24 +1,22 @@
 import axios from 'axios';
 import {
-  slpStats, mmr, lunacia, xpAxie, id,
+  mmr, lunacia, xpAxie, id, options,
 } from './config';
 
 const getSlpStats = async () => {
-  const options = {
-    method: 'GET',
-    url: `${slpStats}${id}`,
-    params: { id: '0x0a10f1c0f1959ce8121dcf9172b3f6d3b7e5bc51' },
-    headers: {
-      'x-rapidapi-host': 'axie-infinity.p.rapidapi.com',
-      'x-rapidapi-key': '6089681f7amsha3c847601b1ea04p18ce3cjsn60fdc4e9bf22',
-    },
-  };
-
-  axios.request(options).then((response) => {
-    console.log(response.data);
-  }).catch((error) => {
-    console.error(error);
+  const stats = [];
+  await axios.request(options).then((response) => {
+    const { data } = response;
+    stats.push(
+      {
+        todaySoFar: data.slp.todaySoFar,
+        yesterdaySLP: data.slp.yesterdaySLP,
+        average: data.slp.average,
+      },
+    );
   });
+
+  return stats;
 };
 
 const getMmr = async () => {
