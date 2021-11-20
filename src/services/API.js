@@ -21,9 +21,18 @@ const getSlpStats = async () => {
 };
 
 const getMmr = async () => {
-  const response = axios.get(`${mmrURL}${id}`);
+  const response = await axios.get(`${mmrURL}${id}`);
   const { data } = response;
-  return data;
+  const mmr = [
+    {
+      clientId: data[0].items[1].client_id,
+      elo: data[0].items[1].elo,
+      rank: data[0].items[1].rank,
+      name: data[0].items[1].name,
+
+    },
+  ];
+  return mmr;
 };
 
 const getLunacia = async () => {

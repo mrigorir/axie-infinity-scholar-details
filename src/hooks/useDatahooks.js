@@ -1,20 +1,29 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSlpAction } from '../redux/data';
+import { getMmrAction } from '../redux/mmr';
 
 const useDatahooks = () => {
-  const details = useSelector((state) => state.details);
+  const slp = useSelector((state) => state.slp);
+  const mmr = useSelector((state) => state.mmr);
   const dispatch = useDispatch();
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessageSLP, setErrorMessageSLP] = useState('');
+  const [errorMessageMMR, setErrorMessageMMR] = useState('');
 
   useEffect(() => {
-    dispatch(getSlpAction()).catch((error) => {
-      setErrorMessage(error);
-      // console.log(JSON.stringify(error));
+    // slp
+    dispatch(getSlpAction()).catch((errorSlpRequest) => {
+      setErrorMessageSLP(`RapidApi: ${errorSlpRequest.message}`);
+    });
+    // mmr
+    dispatch(getMmrAction()).catch((errorMmrRequest) => {
+      setErrorMessageMMR(`Axie.technology API: ${errorMmrRequest.message}`);
     });
   }, []);
 
-  return { details, errorMessage };
+  return {
+    slp, errorMessageSLP, errorMessageMMR, mmr,
+  };
 };
 
 export default useDatahooks;

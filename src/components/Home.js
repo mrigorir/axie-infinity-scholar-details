@@ -4,15 +4,23 @@ import HomeDetails from './HomeDetails';
 
 function Home() {
   const hooks = useDatahooks();
-  const { errorMessage, details } = hooks;
+  const {
+    errorMessageMMR, errorMessageSLP, slp, mmr,
+  } = hooks;
   const {
     todaySoFar, yesterdaySLP, average, totalSLP,
     lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
-  } = details[0];
+  } = slp[0];
+  const {
+    clientId, name, elo, rank,
+  } = mmr[0];
   return (
     <>
       <h1>
-        { errorMessage.message}
+        {errorMessageSLP}
+      </h1>
+      <h1>
+        {errorMessageMMR}
       </h1>
       <HomeDetails
         todaySoFar={todaySoFar}
@@ -24,6 +32,10 @@ function Home() {
         lifetimeSLP={lifetimeSLP}
         roninSLP={roninSLP}
         inGameSLP={inGameSLP}
+        clientId={clientId}
+        name={name}
+        elo={elo}
+        rank={rank}
       />
     </>
   );

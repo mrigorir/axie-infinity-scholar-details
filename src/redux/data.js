@@ -1,5 +1,5 @@
 import {
-  getSlpStats, getLunacia, getMmr, getXpAxie,
+  getSlpStats, getLunacia, getXpAxie,
 } from '../services/API';
 
 // default
@@ -18,13 +18,11 @@ const initialState = [
   },
 ];
 
-// action indicators
+// action indicator
 const GET_SLP_STATUS = 'scholar/details/GET_SLP_STATUS';
-// const GET_SLP_STATUS_LUNACIA = 'scholar/details/GET_SLP_STATUS_LUNACIA';
-const GET_MMR = 'scholar/details/GET_MMR';
 const GET_XP_AXIE = 'scholar/details/GET_XP_AXIE';
 
-// actions
+// action
 const getSlpAction = () => async (dispatch) => {
   const stats = await getSlpStats();
   const { todaySoFar, yesterdaySLP, average } = stats[0];
@@ -51,22 +49,6 @@ const getSlpAction = () => async (dispatch) => {
   });
 };
 
-// const getSlpLunaciaAction = () => async (dispatch) => {
-//   const lunacia = await getLunacia();
-//   dispatch({
-//     type: GET_SLP_STATUS_LUNACIA,
-//     payload: lunacia,
-//   });
-// };
-
-const getMmrAction = () => async (dispatch) => {
-  const mmr = await getMmr();
-  dispatch({
-    type: GET_MMR,
-    payload: mmr,
-  });
-};
-
 const getXpAxieAction = () => async (dispatch) => {
   const xpAxie = await getXpAxie();
   dispatch({
@@ -75,12 +57,10 @@ const getXpAxieAction = () => async (dispatch) => {
   });
 };
 
-// reducers
+// reducer
 const detailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_SLP_STATUS:
-      return [...action.payload];
-    case GET_MMR:
       return [...action.payload];
     case GET_XP_AXIE:
       return [...action.payload];
@@ -90,5 +70,5 @@ const detailsReducer = (state = initialState, action) => {
 };
 
 export {
-  detailsReducer, getSlpAction, getMmrAction, getXpAxieAction,
+  detailsReducer, getSlpAction, getXpAxieAction,
 };
