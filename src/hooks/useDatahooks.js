@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSlpStatsAction } from '../redux/data';
+import { getSlpAction } from '../redux/data';
 
 const useDatahooks = () => {
   const details = useSelector((state) => state.details);
@@ -8,8 +8,9 @@ const useDatahooks = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    dispatch(getSlpStatsAction()).catch((error) => {
+    dispatch(getSlpAction()).catch((error) => {
       setErrorMessage(error);
+      // console.log(JSON.stringify(error));
     });
   }, []);
 

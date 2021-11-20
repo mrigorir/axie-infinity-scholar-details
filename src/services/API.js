@@ -1,10 +1,11 @@
 import axios from 'axios';
 import {
-  mmr, lunacia, xpAxie, id, options,
+  mmrURL, lunaciaURL, xpAxieURL, id, options,
 } from './config';
 
 const getSlpStats = async () => {
   const stats = [];
+
   await axios.request(options).then((response) => {
     const { data } = response;
     stats.push(
@@ -20,21 +21,31 @@ const getSlpStats = async () => {
 };
 
 const getMmr = async () => {
-  const response = axios.get(`${mmr}${id}`);
+  const response = axios.get(`${mmrURL}${id}`);
   const { data } = response;
   return data;
 };
 
 const getLunacia = async () => {
-  const response = axios.get(`${lunacia}${id}`);
+  const response = await axios.get(`${lunaciaURL}${id}`);
   const { data } = response;
-  return data;
+  const lunacia = [
+    {
+      totalSLP: data.total_slp,
+      lastClaim: data.last_claim,
+      nextClaim: data.next_claim,
+      lifetimeSLP: data.lifetime_slp,
+      roninSLP: data.ronin_slp,
+      inGameSLP: data.in_game_slp,
+    },
+  ];
+  return lunacia;
 };
 
 const getXpAxie = async () => {
   const options = {
     method: 'GET',
-    url: `${xpAxie}${id}`,
+    url: `${xpAxieURL}${id}`,
     headers: {
       'x-rapidapi-host': 'axie-infinity.p.rapidapi.com',
       'x-rapidapi-key': '6089681f7amsha3c847601b1ea04p18ce3cjsn60fdc4e9bf22',
