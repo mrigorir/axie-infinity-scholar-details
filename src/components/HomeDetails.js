@@ -5,6 +5,7 @@ function HomeDetails({
   todaySoFar, yesterdaySLP, average, winRate,
   totalSLP, lastClaim, nextClaim, lifetimeSLP,
   roninSLP, inGameSLP, clientId, name, elo, rank,
+  winTotal, loseTotal, drawTotal, totalMatches,
 }) {
   return (
     <>
@@ -67,9 +68,24 @@ function HomeDetails({
         { rank }
       </p>
       <p>
-        Win rate:
+        Win rate (%):
         { winRate }
-        %
+      </p>
+      <p>
+        Win total:
+        { winTotal }
+      </p>
+      <p>
+        Lose total:
+        { loseTotal }
+      </p>
+      <p>
+        Draw total:
+        { drawTotal }
+      </p>
+      <p>
+        Total matches:
+        { totalMatches }
       </p>
     </>
   );
@@ -80,6 +96,10 @@ HomeDetails.defaultProps = {
   todaySoFar: 0,
   average: 0,
   winRate: 'unavailable',
+  winTotal: 0,
+  loseTotal: 0,
+  drawTotal: 0,
+  totalMatches: 0,
   totalSLP: 0,
   lastClaim: 0,
   nextClaim: 0,
@@ -97,6 +117,10 @@ HomeDetails.propTypes = {
   todaySoFar: PropTypes.number,
   average: PropTypes.number,
   winRate: PropTypes.string,
+  winTotal: PropTypes.number,
+  loseTotal: PropTypes.number,
+  drawTotal: PropTypes.number,
+  totalMatches: PropTypes.number,
   totalSLP: PropTypes.number,
   lastClaim: PropTypes.number,
   nextClaim: PropTypes.number,

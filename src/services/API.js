@@ -47,6 +47,10 @@ const getLunacia = async () => {
       lifetimeSLP: data.lifetime_slp,
       roninSLP: data.ronin_slp,
       inGameSLP: data.in_game_slp,
+      winTotal: data.win_total,
+      loseTotal: data.lose_total,
+      drawTotal: data.draw_total,
+      totalMatches: data.total_matches,
     },
   ];
   return lunacia;

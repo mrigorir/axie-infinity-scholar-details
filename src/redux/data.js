@@ -31,6 +31,7 @@ const getSlpAction = () => async (dispatch) => {
   const lunacia = await getLunacia();
   const {
     totalSLP, lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
+    winTotal, loseTotal, drawTotal, totalMatches,
   } = lunacia[0];
   const slp = [
     {
@@ -38,6 +39,10 @@ const getSlpAction = () => async (dispatch) => {
       yesterdaySLP,
       average,
       winRate,
+      winTotal,
+      loseTotal,
+      drawTotal,
+      totalMatches,
       totalSLP,
       lastClaim,
       nextClaim,

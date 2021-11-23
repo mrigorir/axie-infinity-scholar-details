@@ -10,6 +10,7 @@ function Home() {
   const {
     todaySoFar, yesterdaySLP, average, winRate, totalSLP,
     lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
+    winTotal, loseTotal, drawTotal, totalMatches,
   } = slp[0];
   const {
     clientId, name, elo, rank,
@@ -27,6 +28,10 @@ function Home() {
         yesterdaySLP={yesterdaySLP}
         average={average}
         winRate={winRate}
+        winTotal={winTotal}
+        loseTotal={loseTotal}
+        drawTotal={drawTotal}
+        totalMatches={totalMatches}
         totalSLP={totalSLP}
         lastClaim={lastClaim}
         nextClaim={nextClaim}
