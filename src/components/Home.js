@@ -1,6 +1,8 @@
 import React from 'react';
 import useDatahooks from '../hooks/useDatahooks';
-import HomeDetails from './HomeDetails';
+import Slp from './Slp';
+import Mmr from './Mmr';
+import Message from './Message';
 
 function Home() {
   const hooks = useDatahooks();
@@ -15,33 +17,36 @@ function Home() {
   const {
     clientId, name, elo, rank,
   } = mmr[0];
+
   return (
     <>
       <h1>
-        {errorMessageSLP}
+        {errorMessageSLP && <Message message={errorMessageSLP} />}
       </h1>
       <h1>
-        {errorMessageMMR}
+        {errorMessageMMR && <Message message={errorMessageMMR} />}
       </h1>
-      <HomeDetails
+      <Slp
         todaySoFar={todaySoFar}
         yesterdaySLP={yesterdaySLP}
         average={average}
-        winRate={winRate}
-        winTotal={winTotal}
-        loseTotal={loseTotal}
-        drawTotal={drawTotal}
-        totalMatches={totalMatches}
         totalSLP={totalSLP}
         lastClaim={lastClaim}
         nextClaim={nextClaim}
         lifetimeSLP={lifetimeSLP}
         roninSLP={roninSLP}
         inGameSLP={inGameSLP}
+      />
+      <Mmr
         clientId={clientId}
         name={name}
         elo={elo}
         rank={rank}
+        winRate={winRate}
+        winTotal={winTotal}
+        loseTotal={loseTotal}
+        drawTotal={drawTotal}
+        totalMatches={totalMatches}
       />
     </>
   );
