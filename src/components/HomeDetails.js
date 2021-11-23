@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function HomeDetails({
-  todaySoFar, yesterdaySLP, average, totalSLP,
-  lastClaim, nextClaim, lifetimeSLP, roninSLP,
-  inGameSLP, clientId, name, elo, rank,
+  todaySoFar, yesterdaySLP, average, winRate,
+  totalSLP, lastClaim, nextClaim, lifetimeSLP,
+  roninSLP, inGameSLP, clientId, name, elo, rank,
 }) {
   return (
     <>
+      <p> SLP </p>
       <p>
         SLP made yesterday
         { yesterdaySLP }
@@ -48,6 +49,7 @@ function HomeDetails({
       <br />
       <br />
       <br />
+      <p>MMR:</p>
       <p>
         Client id:
         { clientId }
@@ -64,6 +66,11 @@ function HomeDetails({
         Rank:
         { rank }
       </p>
+      <p>
+        Win rate:
+        { winRate }
+        %
+      </p>
     </>
   );
 }
@@ -72,6 +79,7 @@ HomeDetails.defaultProps = {
   yesterdaySLP: 0,
   todaySoFar: 0,
   average: 0,
+  winRate: 'unavailable',
   totalSLP: 0,
   lastClaim: 0,
   nextClaim: 0,
@@ -88,6 +96,7 @@ HomeDetails.propTypes = {
   yesterdaySLP: PropTypes.number,
   todaySoFar: PropTypes.number,
   average: PropTypes.number,
+  winRate: PropTypes.string,
   totalSLP: PropTypes.number,
   lastClaim: PropTypes.number,
   nextClaim: PropTypes.number,

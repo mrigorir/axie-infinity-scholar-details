@@ -25,7 +25,9 @@ const GET_XP_AXIE = 'scholar/details/GET_XP_AXIE';
 // action
 const getSlpAction = () => async (dispatch) => {
   const stats = await getSlpStats();
-  const { todaySoFar, yesterdaySLP, average } = stats[0];
+  const {
+    todaySoFar, yesterdaySLP, average, winRate,
+  } = stats[0];
   const lunacia = await getLunacia();
   const {
     totalSLP, lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
@@ -35,6 +37,7 @@ const getSlpAction = () => async (dispatch) => {
       todaySoFar,
       yesterdaySLP,
       average,
+      winRate,
       totalSLP,
       lastClaim,
       nextClaim,

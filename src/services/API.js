@@ -13,6 +13,7 @@ const getSlpStats = async () => {
         todaySoFar: data.slp.todaySoFar,
         yesterdaySLP: data.slp.yesterdaySLP,
         average: data.slp.average,
+        winRate: data.leaderboard.winRate,
       },
     );
   });

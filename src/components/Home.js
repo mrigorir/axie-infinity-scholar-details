@@ -8,7 +8,7 @@ function Home() {
     errorMessageMMR, errorMessageSLP, slp, mmr,
   } = hooks;
   const {
-    todaySoFar, yesterdaySLP, average, totalSLP,
+    todaySoFar, yesterdaySLP, average, winRate, totalSLP,
     lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
   } = slp[0];
   const {
@@ -26,6 +26,7 @@ function Home() {
         todaySoFar={todaySoFar}
         yesterdaySLP={yesterdaySLP}
         average={average}
+        winRate={winRate}
         totalSLP={totalSLP}
         lastClaim={lastClaim}
         nextClaim={nextClaim}
