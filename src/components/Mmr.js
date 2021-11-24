@@ -1,55 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loading from './Loading';
 
 function Mmr({
-  clientId, name, elo, rank, winRate, winTotal, loseTotal, drawTotal, totalMatches,
+  clientId, name, elo, rank, winRate, winTotal,
+  loseTotal, drawTotal, totalMatches,
 }) {
   return (
     <>
-      <p>MMR:</p>
-      {elo === 0 && <Loading />}
-      {elo !== 0
-         && (
-         <>
-           <p>
-             Client id:
-             { clientId }
-           </p>
-           <p>
-             Name:
-             { name }
-           </p>
-           <p>
-             Elo:
-             { elo }
-           </p>
-           <p>
-             Rank:
-             { rank }
-           </p>
-           <p>
-             Win rate (%):
-             { winRate }
-           </p>
-           <p>
-             Win total:
-             { winTotal }
-           </p>
-           <p>
-             Lose total:
-             { loseTotal }
-           </p>
-           <p>
-             Draw total:
-             { drawTotal }
-           </p>
-           <p>
-             Total matches:
-             { totalMatches }
-           </p>
-         </>
-         )}
+      <p>
+        Client id:
+        { clientId }
+      </p>
+      <p>
+        Name:
+        { name }
+      </p>
+      <p>
+        Elo:
+        { elo }
+      </p>
+      <p>
+        Rank:
+        { rank }
+      </p>
+      <p>
+        Win rate (%):
+        { winRate }
+      </p>
+      <p>
+        Win total:
+        { winTotal }
+      </p>
+      <p>
+        Lose total:
+        { loseTotal }
+      </p>
+      <p>
+        Draw total:
+        { drawTotal }
+      </p>
+      <p>
+        Total matches:
+        { totalMatches }
+      </p>
     </>
   );
 }
