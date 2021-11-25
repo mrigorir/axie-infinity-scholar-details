@@ -1,6 +1,4 @@
-import {
-  getSlpStats, getLunacia, getXpAxie,
-} from '../services/API';
+import { getSlpStats, getLunacia } from '../services/API';
 
 // default
 const initialState = [
@@ -20,7 +18,6 @@ const initialState = [
 
 // action indicator
 const GET_SLP_STATUS = 'scholar/details/GET_SLP_STATUS';
-const GET_XP_AXIE = 'scholar/details/GET_XP_AXIE';
 
 // action
 const getSlpAction = () => async (dispatch) => {
@@ -57,20 +54,10 @@ const getSlpAction = () => async (dispatch) => {
   });
 };
 
-const getXpAxieAction = () => async (dispatch) => {
-  const xpAxie = await getXpAxie();
-  dispatch({
-    type: GET_XP_AXIE,
-    payload: xpAxie,
-  });
-};
-
 // reducer
 const detailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_SLP_STATUS:
-      return [...action.payload];
-    case GET_XP_AXIE:
       return [...action.payload];
     default:
       return state;
@@ -78,5 +65,5 @@ const detailsReducer = (state = initialState, action) => {
 };
 
 export {
-  detailsReducer, getSlpAction, getXpAxieAction,
+  detailsReducer, getSlpAction,
 };

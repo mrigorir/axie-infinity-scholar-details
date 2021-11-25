@@ -1,12 +1,12 @@
 import axios from 'axios';
 import {
-  mmrURL, lunaciaURL, xpAxieURL, id, options,
+  mmrURL, lunaciaURL, optionAxie, id, optionsSLP,
 } from './config';
 
 const getSlpStats = async () => {
   const stats = [];
 
-  await axios.request(options).then((response) => {
+  await axios.request(optionsSLP).then((response) => {
     const { data } = response;
     stats.push(
       {
@@ -56,23 +56,26 @@ const getLunacia = async () => {
   return lunacia;
 };
 
-const getXpAxie = async () => {
-  const options = {
-    method: 'GET',
-    url: `${xpAxieURL}${id}`,
-    headers: {
-      'x-rapidapi-host': 'axie-infinity.p.rapidapi.com',
-      'x-rapidapi-key': '6089681f7amsha3c847601b1ea04p18ce3cjsn60fdc4e9bf22',
-    },
-  };
+/*
+total: data.data.axies.total,
+results: data.data.axies.results
+*/
 
-  axios.request(options).then((response) => {
-    console.log(response.data);
-  }).catch((error) => {
-    console.error(error);
+const getAxies = async () => {
+  const axies = [];
+  await axios.request(optionAxie).then((response) => {
+    const { data } = response;
+    const { total, results } = data.data.axies;
+    axies.push(
+      {
+        total,
+        results,
+      },
+    );
   });
+  return axies;
 };
 
 export {
-  getSlpStats, getLunacia, getMmr, getXpAxie,
+  getSlpStats, getLunacia, getMmr, getAxies,
 };

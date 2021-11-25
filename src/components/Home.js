@@ -4,6 +4,7 @@ import Slp from './Slp';
 import Mmr from './Mmr';
 import Message from './Message';
 import Loading from './Loading';
+import { getAxies } from '../services/API';
 
 function Home() {
   const hooks = useDatahooks();
@@ -19,6 +20,7 @@ function Home() {
   const {
     clientId, name, elo, rank,
   } = mmr[0];
+  getAxies();
   return (
     <>
       <div>
