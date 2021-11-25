@@ -48,16 +48,28 @@ function Slp({
   );
 }
 
+Slp.defaultProps = {
+  yesterdaySLP: 0,
+  todaySoFar: 0,
+  average: 0,
+  totalSLP: 0,
+  lastClaim: 0,
+  nextClaim: 0,
+  lifetimeSLP: 0,
+  roninSLP: 0,
+  inGameSLP: 0,
+};
+
 Slp.propTypes = {
-  yesterdaySLP: PropTypes.number.isRequired,
-  todaySoFar: PropTypes.number.isRequired,
-  average: PropTypes.number.isRequired,
-  totalSLP: PropTypes.number.isRequired,
-  lastClaim: PropTypes.number.isRequired,
-  nextClaim: PropTypes.number.isRequired,
-  lifetimeSLP: PropTypes.number.isRequired,
-  roninSLP: PropTypes.number.isRequired,
-  inGameSLP: PropTypes.number.isRequired,
+  yesterdaySLP: PropTypes.number,
+  todaySoFar: PropTypes.number,
+  average: PropTypes.number,
+  totalSLP: PropTypes.number,
+  lastClaim: PropTypes.number,
+  nextClaim: PropTypes.number,
+  lifetimeSLP: PropTypes.number,
+  roninSLP: PropTypes.number,
+  inGameSLP: PropTypes.number,
 };
 
 export default Slp;

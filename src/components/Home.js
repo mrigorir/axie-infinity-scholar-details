@@ -1,12 +1,9 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import useDatahooks from '../hooks/useDatahooks';
-// import Slp from './Slp';
-// import Mmr from './Mmr';
+import Slp from './Slp';
+import Mmr from './Mmr';
 import Message from './Message';
 import Loading from './Loading';
-
-const Slp = lazy(() => import('./Slp'));
-const Mmr = lazy(() => import('./Mmr'));
 
 function Home() {
   const hooks = useDatahooks();
@@ -29,19 +26,20 @@ function Home() {
         <h1>
           {errorMessageSLP && <Message message={errorMessageSLP} />}
         </h1>
-        <Suspense fallback={<Loading />}>
-          <Slp
-            todaySoFar={todaySoFar}
-            yesterdaySLP={yesterdaySLP}
-            average={average}
-            totalSLP={totalSLP}
-            lastClaim={lastClaim}
-            nextClaim={nextClaim}
-            lifetimeSLP={lifetimeSLP}
-            roninSLP={roninSLP}
-            inGameSLP={inGameSLP}
-          />
-        </Suspense>
+        {(elo === 0 || lastClaim === 0) ? <Loading />
+          : (
+            <Slp
+              todaySoFar={todaySoFar}
+              yesterdaySLP={yesterdaySLP}
+              average={average}
+              totalSLP={totalSLP}
+              lastClaim={lastClaim}
+              nextClaim={nextClaim}
+              lifetimeSLP={lifetimeSLP}
+              roninSLP={roninSLP}
+              inGameSLP={inGameSLP}
+            />
+          )}
       </div>
       <div>
         MMR:
@@ -51,7 +49,7 @@ function Home() {
         <h1>
           {errorMessageSLP && <Message message={errorMessageSLP} />}
         </h1>
-        {elo === 0 ? <Loading />
+        {(elo === 0 || lastClaim === 0) ? <Loading />
           : (
             <Mmr
               clientId={clientId}

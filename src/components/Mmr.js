@@ -47,16 +47,28 @@ function Mmr({
   );
 }
 
+Mmr.defaultProps = {
+  winRate: 'unavailable',
+  winTotal: 0,
+  loseTotal: 0,
+  drawTotal: 0,
+  totalMatches: 0,
+  clientId: 'unavailable',
+  name: 'unavailable',
+  elo: 0,
+  rank: 0,
+};
+
 Mmr.propTypes = {
-  winRate: PropTypes.string.isRequired,
-  winTotal: PropTypes.number.isRequired,
-  loseTotal: PropTypes.number.isRequired,
-  drawTotal: PropTypes.number.isRequired,
-  totalMatches: PropTypes.number.isRequired,
-  clientId: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  elo: PropTypes.number.isRequired,
-  rank: PropTypes.number.isRequired,
+  winRate: PropTypes.string,
+  winTotal: PropTypes.number,
+  loseTotal: PropTypes.number,
+  drawTotal: PropTypes.number,
+  totalMatches: PropTypes.number,
+  clientId: PropTypes.string,
+  name: PropTypes.string,
+  elo: PropTypes.number,
+  rank: PropTypes.number,
 };
 
 export default Mmr;
