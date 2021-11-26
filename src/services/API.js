@@ -56,11 +56,6 @@ const getLunacia = async () => {
   return lunacia;
 };
 
-/*
-total: data.data.axies.total,
-results: data.data.axies.results
-*/
-
 const getAxies = async () => {
   const axies = [];
   await axios.request(optionAxie).then((response) => {
