@@ -3,11 +3,7 @@ import { getAxies } from '../services/API';
 // default
 const initialState = {
   total: 0,
-  id: 0,
-  name: 'unavailable',
-  breedCount: 0,
-  image: 'unavailable',
-  parts: 'nohing to show',
+  results: 0,
 };
 
 // action indicator
@@ -16,10 +12,16 @@ const GET_AXIES_DATA = 'scholar/details/GET_AXIES_DATA;';
 // action
 const getAxiesAction = () => async (dispatch) => {
   const axies = await getAxies();
+  const axiesData = [
+    {
+      total: axies[0].total,
+      results: axies[0].results,
+    },
+  ];
   dispatch(
     {
       type: GET_AXIES_DATA,
-      payload: axies,
+      payload: axiesData,
     },
   );
 };

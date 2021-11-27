@@ -24,6 +24,8 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.3",
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.12",
     "web-vitals": "^1.0.1",
     "yarn": "^1.22.17"
   },
