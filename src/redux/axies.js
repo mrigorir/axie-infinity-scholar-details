@@ -10,8 +10,8 @@ const initialState = {
 const GET_AXIES_DATA = 'scholar/details/GET_AXIES_DATA;';
 
 // action
-const getAxiesAction = () => async (dispatch) => {
-  const axies = await getAxies();
+const getAxiesAction = (id) => async (dispatch) => {
+  const axies = await getAxies(id);
   const axiesData = [
     {
       total: axies[0].total,

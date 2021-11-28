@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSlpAction } from '../redux/slp';
 import { getMmrAction } from '../redux/mmr';
@@ -8,20 +8,23 @@ const useDatahooks = () => {
   const slp = useSelector((state) => state.slp);
   const mmr = useSelector((state) => state.mmr);
   const axies = useSelector((state) => state.axies);
+  const roninRef = useRef();
 
   const dispatch = useDispatch();
-  const [errorMessageSLP, setErrorMessageSLP] = useState('');
-  const [errorMessageMMR, setErrorMessageMMR] = useState('');
-  const [errorMessageAxies, setErrorMessageAxies] = useState('');
 
   useEffect(() => {
-    dispatch(getSlpAction()).catch((error) => setErrorMessageSLP(`SLP: ${error.message}`));
-    dispatch(getMmrAction()).catch((error) => setErrorMessageMMR(`MMR: ${error.message}`));
-    dispatch(getAxiesAction()).catch((error) => setErrorMessageAxies(`Axies data: ${error.message}`));
+    console.log('useEffect working when page loads.');
   }, []);
 
   return {
-    slp, errorMessageSLP, errorMessageMMR, errorMessageAxies, mmr, axies,
+    slp,
+    mmr,
+    axies,
+    dispatch,
+    getAxiesAction,
+    getMmrAction,
+    getSlpAction,
+    roninRef,
   };
 };
 

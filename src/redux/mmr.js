@@ -14,8 +14,8 @@ const initialState = [
 const GET_MMR = 'scholar/details/GET_MMR';
 
 // action
-const getMmrAction = () => async (dispatch) => {
-  const mmr = await getMmr();
+const getMmrAction = (id) => async (dispatch) => {
+  const mmr = await getMmr(id);
   dispatch({
     type: GET_MMR,
     payload: mmr,

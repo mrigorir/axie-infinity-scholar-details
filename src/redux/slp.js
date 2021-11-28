@@ -20,12 +20,12 @@ const initialState = [
 const GET_SLP_STATUS = 'scholar/details/GET_SLP_STATUS';
 
 // action
-const getSlpAction = () => async (dispatch) => {
-  const stats = await getSlpStats();
+const getSlpAction = (id) => async (dispatch) => {
+  const stats = await getSlpStats(id);
   const {
     todaySoFar, yesterdaySLP, average, winRate,
   } = stats[0];
-  const lunacia = await getLunacia();
+  const lunacia = await getLunacia(id);
   const {
     totalSLP, lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
     winTotal, loseTotal, drawTotal, totalMatches,

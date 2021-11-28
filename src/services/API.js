@@ -1,9 +1,10 @@
 import axios from 'axios';
 import {
-  mmrURL, lunaciaURL, optionAxie, id, optionsSLP,
+  mmrURL, lunaciaURL, getId,
 } from './config';
 
-const getSlpStats = async () => {
+const getSlpStats = async (id) => {
+  const { optionsSLP } = getId(id);
   const stats = [];
 
   await axios.request(optionsSLP).then((response) => {
@@ -21,7 +22,7 @@ const getSlpStats = async () => {
   return stats;
 };
 
-const getMmr = async () => {
+const getMmr = async (id) => {
   const response = await axios.get(`${mmrURL}${id}`);
   const { data } = response;
   const mmr = [
@@ -36,7 +37,7 @@ const getMmr = async () => {
   return mmr;
 };
 
-const getLunacia = async () => {
+const getLunacia = async (id) => {
   const response = await axios.get(`${lunaciaURL}${id}`);
   const { data } = response;
   const lunacia = [
@@ -56,7 +57,8 @@ const getLunacia = async () => {
   return lunacia;
 };
 
-const getAxies = async () => {
+const getAxies = async (id) => {
+  const { optionAxie } = getId(id);
   const axies = [];
   await axios.request(optionAxie).then((response) => {
     const { data } = response;
