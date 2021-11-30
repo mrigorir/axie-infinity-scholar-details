@@ -1,4 +1,4 @@
-# React Todo App
+# Scholar Axie details
 
 > This project handles the free APIs of Axie Infinity NFT game in order to get user's data info through the id (ronin), like SLP, MMR, and each Axies data, using REact and Redux.
 
@@ -19,7 +19,7 @@
  - Axies.technology APIs.
 
 ## Image Preview
-![Screenshot Main Page](src/assests/images/capture.png)
+![Screenshot Main Page](./src/assets/images/capture.png)
 
 ## :star:  :star:
 
