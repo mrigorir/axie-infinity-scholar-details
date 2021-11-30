@@ -29,8 +29,8 @@ const useDatahooks = () => {
     localStorage.setItem(LOCAL_STORAGE_SLP, JSON.stringify(slp));
     localStorage.setItem(LOCAL_STORAGE_MMR, JSON.stringify(mmr));
     localStorage.setItem(LOCAL_STORAGE_AXIES, JSON.stringify(axies));
-  }, [slp]);
-
+  }, [slp, mmr, axies]);
+ 
   return {
     slp,
     mmr,
