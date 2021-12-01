@@ -18,11 +18,11 @@ const useDatahooks = () => {
   const storedAxies = JSON.parse(localStorage.getItem(LOCAL_STORAGE_AXIES));
 
   useEffect(() => {
-    if (storedSLP && storedMMR && storedAxies) {
+   /* if (storedSLP && storedMMR && storedAxies) {
       slp = storedSLP;
       mmr = storedMMR;
       axies = storedAxies;
-    }
+    }*/
   }, []);
 
   useEffect(() => {
