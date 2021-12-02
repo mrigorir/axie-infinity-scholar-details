@@ -33,16 +33,21 @@ function Home() {
           identify player
         </button>
       </form>
+      <h1>
+        {errorMessageSLP && <Message message={errorMessageSLP} />}
+      </h1>
+      <h1>
+        {errorMessageMMR && <Message message={errorMessageMMR} />}
+      </h1>
+      <h1>
+        {errorMessageAxies && <Message message={errorMessageAxies} />}
+      </h1>
+      <h1>
+        Last id analized:
+        {' '}
+        { mmr[0].clientId }
+      </h1>
       <div>
-        <h1>
-          {errorMessageSLP && <Message message={errorMessageSLP} />}
-        </h1>
-        <h1>
-          {errorMessageMMR && <Message message={errorMessageMMR} />}
-        </h1>
-        <h1>
-          {errorMessageAxies && <Message message={errorMessageAxies} />}
-        </h1>
         SLP:
         {(mmr[0].elo === 0 || slp[0].lastClaim === 0) ? <Loading />
           : (
