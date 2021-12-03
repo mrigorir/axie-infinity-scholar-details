@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import useDatahooks from '../hooks/useDatahooks';
 import Slp from './Slp';
@@ -10,24 +10,13 @@ import Axie from './Axie';
 function Home() {
   const hooks = useDatahooks();
   const {
-    slp, mmr, axies, dispatch, getMmrAction, getAxiesAction, getSlpAction,
-    roninRef,
+    slp, mmr, axies, roninRef, errorMessageAxies,
+    errorMessageMMR, errorMessageSLP, handleRonin,
   } = hooks;
-  const [errorMessageMMR, setErrorMessageMMR] = useState('');
-  const [errorMessageSLP, setErrorMessageSLP] = useState('');
-  const [errorMessageAxies, setErrorMessageAxies] = useState('');
-
-  const handleRonin = (e) => {
-    const ronin = roninRef.current.value;
-    e.preventDefault();
-    dispatch(getSlpAction(ronin)).catch((error) => setErrorMessageSLP(`SLP: ${error.message}`));
-    dispatch(getMmrAction(ronin)).catch((error) => setErrorMessageMMR(`MMR: ${error.message}`));
-    dispatch(getAxiesAction(ronin)).catch((error) => setErrorMessageAxies(`Axies data: ${error.message}`));
-  };
 
   return (
     <>
-      <form onSubmit={handleRonin}>
+      <form onSubmit={(e) => handleRonin(e, roninRef)}>
         <input type="text" ref={roninRef} required />
         <button type="submit">
           identify player
