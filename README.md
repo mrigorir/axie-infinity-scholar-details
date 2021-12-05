@@ -14,9 +14,9 @@
 
  - React's own Font Awesome.
 
- - RapidApi axies APIs.
+ - RapidApi axies API.
 
- - Axies.technology APIs.
+ - Axies.technology API.
 
 ## Image Preview
 ![Screenshot Main Page](./src/assets/images/capture.png)
