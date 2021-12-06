@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Scholar Axie details
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This project handles the free APIs of Axie Infinity NFT game in order to get user's data info through the id (ronin), like SLP, MMR, and each Axies data, using REact and Redux.
 
-## Available Scripts
+## This project was built with:
 
-In the project directory, you can run:
+ - React.
 
-### `yarn start`
+ - React-Redux.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ - Browser's Local Storage.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ - React-boostrap (5.1 version).
 
-### `yarn test`
+ - React's own Font Awesome.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - RapidApi axies API.
 
-### `yarn build`
+ - Axies.technology API.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Image Preview
+![Screenshot Main Page](./src/assets/images/capture.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :star:  :star:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `yarn eject`
+To get a local copy up and running follow these simple example steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- On the project, GitHub page, navigate to the [main page of the repository](https://github.com/mrigorir/axie-infinity-scholar-details)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Click on a button named `code`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Copy the project URL as displayed on HTTPS tab
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- If you're running Windows Operating System, open your command prompt. On Linux, Open your terminal
 
-## Learn More
+- Change the current working directory to the location where you want the cloned directory to be made. Leave as it is if the current location is where you want the project to be.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Type `git clone`, and then paste the URL you copied in Step 3.<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  `$ git clone git@github.com:mrigorir/axie-infinity-scholar-details.git` <em>Press Enter key</em><br>
 
-### Code Splitting
+- Your local copy will be created.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Please note that you must have Git installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
-### Analyzing the Bundle Size
+- After you get the project aiming to the desired directory, you need now to install dependencies by running npm install.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Github Actions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
 
-### Advanced Configuration
+1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
+   
+2. Create the `feature/branch` and push.
+   
+3. Start working on your milestone as usual.
+   
+4. Open a PR from the `feature/branch` when your work is done.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Usage 
 
-### Deployment
+- Make sure you have npm and node installed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- I recommend the use of VS code as a code editor, but you can use any code editor.
 
-### `yarn build` fails to minify
+- Run in your terminal `npm start` OR `yarn start` to see the run the app in your default browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- You should see the todo form ready to be used.
+
+- Add a name for the task owner (description is optional).
+
+- hit create button to create your todo.
+
+- You can either check it when DONE or remove it by hitting the trash icon.
+## Authors
+
+👤 **Marco Parra**
+
+- GitHub: [@mrigorir](https://github.com/mrigorir)
+- Twitter: [@marcoparra311](https://twitter.com/marcoparra311)
+- LinkedIn: [@marco-alonso-parra](https://www.linkedin.com/in/marco-alonso-parra/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/mrigorir/react-todo-app/issues)
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## Acknowledgments
+
+- Creation inspired on [tracker.axie.management](hhttps://tracker.axie.management/)
+
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

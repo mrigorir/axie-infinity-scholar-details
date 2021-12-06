@@ -1,7 +1,17 @@
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import GlobalStyle from './styles/GlobalStyle';
+import Home from './components/Home';
+
 function App() {
   return (
     <>
-      <h1>Start!</h1>
+      <Container fluid>
+        <Container className="bg-info shadow-lg border border-secondary">
+          <Home />
+        </Container>
+      </Container>
+      <GlobalStyle />
     </>
   );
 }
