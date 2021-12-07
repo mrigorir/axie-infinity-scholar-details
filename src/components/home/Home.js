@@ -1,18 +1,13 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import {
-  Row, Col, Form, Button, Badge, Image,
-} from 'react-bootstrap';
-import {
-  TopBar, ID, IdTitle, Title,
-} from '../styles/topBar.styles';
-import useDatahooks from '../hooks/useDatahooks';
-import icon from '../assets/icon/icon.png';
-import Slp from './Slp';
-import Mmr from './Mmr';
-import Message from './Message';
-import Loading from './Loading';
-import Axie from './Axie';
+import { Row, Col } from 'react-bootstrap';
+import useDatahooks from '../../hooks/useDatahooks';
+import Slp from '../slp/Slp';
+import Mmr from '../mmr/Mmr';
+import Message from '../messages/Message';
+import Loading from '../loader/Loading';
+import Axie from '../axie/Axie';
+import Mainbar from './Mainbar';
 
 function Home() {
   const hooks = useDatahooks();
@@ -23,28 +18,9 @@ function Home() {
 
   return (
     <>
-      <Row className="shadow-sm bg-highDarkPurple p-0 rounded">
+      <Row className="shadow-sm bg-dark-blue p-0 rounded">
         <Col md={12} className="p-0 mt-3">
-          <TopBar className="d-flex align-items-center justify-content-between flex-wrap">
-            <Title>
-              <Image fluid src={icon} height={100} width={100} className="icon" />
-              Axie CB Scholars
-            </Title>
-            <Form onSubmit={(e) => handleRonin(e, roninRef)} className="d-flex">
-              <Form.Control type="text" ref={roninRef} required placeholder="Write token" />
-              <Button type="submit" className="primary ms-3 ps-4 pe-4 bg-darkPurple fs-5 fw-bold border-0">
-                Track
-              </Button>
-            </Form>
-            <ID className="mt-3">
-              <IdTitle>
-                Last id:
-              </IdTitle>
-              <Badge className="p-2 fs-6 bg-darkPurple ms-2">
-                { mmr[0].clientId }
-              </Badge>
-            </ID>
-          </TopBar>
+          <Mainbar roninRef={roninRef} handleRonin={handleRonin} mmr={mmr} />
         </Col>
       </Row>
       <h1>
