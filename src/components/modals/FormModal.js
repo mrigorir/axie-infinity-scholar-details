@@ -20,7 +20,7 @@ const FormModal = ({ roninRef, handleRonin }) => {
       </Wrapper>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header className="bg-dark-blue text-white fs-4 fw-bold">
+        <Modal.Header className="bg-dark-purple text-white fs-4 fw-bold">
           Input scholar details
           <CloseButton className="btn-close-white border border-3 border-info p-2" onClick={handleClose} />
         </Modal.Header>
