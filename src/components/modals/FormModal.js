@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import Wrapper from '../../styles/FormWrapper.styles';
 
-const FormModal = ({ roninRef, handleRonin }) => {
+const FormModal = ({ roninRef, managerPerRef, handleRonin }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -26,7 +26,8 @@ const FormModal = ({ roninRef, handleRonin }) => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={(e) => handleRonin(e, roninRef)} className="d-flex">
-            <Form.Control type="text" ref={roninRef} required placeholder="Write token" />
+            <Form.Control type="text" ref={managerPerRef} required placeholder="Manager Percentage" />
+            <Form.Control type="text" ref={roninRef} required placeholder="Ronin address with 0x format" />
             <Modal.Footer>
               <Button type="submit" className="primary ms-3 ps-4 pe-4 fs-5 fw-bold border-0">
                 Track
@@ -40,6 +41,7 @@ const FormModal = ({ roninRef, handleRonin }) => {
 };
 
 FormModal.propTypes = {
+  managerPerRef: PropTypes.number.isRequired,
   roninRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleRonin: PropTypes.func.isRequired,
 };

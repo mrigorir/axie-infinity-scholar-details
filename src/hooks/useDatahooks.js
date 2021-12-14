@@ -9,6 +9,7 @@ const useDatahooks = () => {
   const mmr = useSelector((state) => state.mmr);
   const axies = useSelector((state) => state.axies);
   const roninRef = useRef();
+  const managerPerRef = useRef();
   const dispatch = useDispatch();
   const LOCAL_STORAGE_ID_SCHOLAR = 'id';
   const storedId = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ID_SCHOLAR));
@@ -38,6 +39,7 @@ const useDatahooks = () => {
     mmr,
     axies,
     roninRef,
+    managerPerRef,
     errorMessageMMR,
     errorMessageSLP,
     errorMessageAxies,

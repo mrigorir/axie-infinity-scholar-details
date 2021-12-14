@@ -14,13 +14,14 @@ function Home() {
   const {
     slp, mmr, axies, roninRef, errorMessageAxies,
     errorMessageMMR, errorMessageSLP, handleRonin,
+    managerPerRef,
   } = hooks;
 
   return (
     <>
       <Row className="shadow-sm bg-dark-blue p-0 rounded">
         <Col md={12} className="p-0 mt-3">
-          <Mainbar roninRef={roninRef} handleRonin={handleRonin} mmr={mmr} />
+          <Mainbar roninRef={roninRef} managerPerRef={managerPerRef} handleRonin={handleRonin} mmr={mmr} />
         </Col>
       </Row>
       <h1>

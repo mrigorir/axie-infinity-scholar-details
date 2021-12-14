@@ -9,14 +9,14 @@ import {
   TopBar, ID, Title,
 } from '../../styles/Mainbar.styles';
 
-function Mainbar({ roninRef, handleRonin, mmr }) {
+function Mainbar({ roninRef, managerPerRef, handleRonin, mmr }) {
   return (
     <TopBar className="d-flex align-items-center justify-content-around flex-wrap">
       <Title>
         <Image fluid src={icon} height={100} width={100} className="icon" />
         <Image fluid src={logo} height={200} width={200} />
       </Title>
-      <FormModal roninRef={roninRef} handleRonin={handleRonin} />
+      <FormModal roninRef={roninRef} managerPerRef={managerPerRef} handleRonin={handleRonin} />
       <ID className="mt-3">
         <IdModal mmr={mmr} />
       </ID>
@@ -25,6 +25,7 @@ function Mainbar({ roninRef, handleRonin, mmr }) {
 }
 
 Mainbar.propTypes = {
+  managerPerRef: PropTypes.number.isRequired,
   roninRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleRonin: PropTypes.func.isRequired,
   mmr: PropTypes.oneOfType([PropTypes.array]).isRequired,
