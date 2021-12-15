@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --maxWidth: 1280px; 
     --white: #fff;
     --lightGrey: #eee;
     --grey: #ddd;
@@ -16,10 +15,6 @@ const GlobalStyle = createGlobalStyle`
     --medBlue: #5583df;
     --darkBlue: #082d64;
     --aqua: #4bb3b2;
-    --fontSuperBig: 2.5rem;
-    --fontBig: 1.5rem;
-    --fontMed: 1.2rem;
-    --fontSmall: 1rem;
   }
 
   * {
@@ -34,13 +29,6 @@ const GlobalStyle = createGlobalStyle`
     hyphens: auto; 
   }
 
-  .truncate {
-    width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   .half-circled {
     border-radius: 30px;
   }
@@ -48,10 +36,6 @@ const GlobalStyle = createGlobalStyle`
   .half-circled:hover {
     transform: scale(1.1, 1.1);
     transition: all ease .3s;
-  }
-
-  .id-button:hover {
-    color: white;
   }
 
   body {  
@@ -71,34 +55,6 @@ const GlobalStyle = createGlobalStyle`
 
     p {
       font-size: 1rem;
-    }
-
-    .bg-grey {
-      background-color: var(--lightGrey);
-    }
-
-    .bg-darkerGrey {
-      background-color: var(--grey);
-    }
-
-    .border-grey {
-      border: solid 2px #ccc;
-    }
-
-    .bg-lightPurple {
-      background-color: var(--lightPurple);
-    }
-
-    .bg-darkPurple {
-      background-color: var(--darkPurple)!important;
-    }
-
-    .bg-highDarkPurple {
-      background-color: var(--highDarkPurple);
-    }
-
-    .bg-blue {
-      background-color: var(--medBlue);
     }
 
     .bg-dark-blue {

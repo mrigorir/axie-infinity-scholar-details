@@ -21,7 +21,11 @@ function Home() {
     <>
       <Row className="shadow-sm bg-dark-blue p-0 rounded">
         <Col md={12} className="p-0 mt-3">
-          <Mainbar roninRef={roninRef} managerPerRef={managerPerRef} handleRonin={handleRonin} mmr={mmr} />
+          <Mainbar
+            roninRef={roninRef}
+            managerPerRef={managerPerRef}
+            handleRonin={handleRonin}
+          />
         </Col>
       </Row>
       <h1>

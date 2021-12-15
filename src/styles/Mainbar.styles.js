@@ -6,14 +6,8 @@ const TopBar = styled.div`
   }
 `;
 
-const ID = styled.p`
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
+const DarkModeWrapper = styled.div`
 
-  @media screen and (max-width: 520px) {
-    margin-right: 0;
-  }
 `;
 
 const Title = styled.h2`
@@ -23,5 +17,5 @@ const Title = styled.h2`
 `;
 
 export {
-  TopBar, ID, Title,
+  TopBar, DarkModeWrapper, Title,
 };
