@@ -2,19 +2,44 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --white: #fff;
     --lightGrey: #eee;
     --grey: #ddd;
-    --medGrey: #353535; 
+    --medGrey: #585656;
     --darkGrey: #1c1c1c;
-    --lightPurple: #cfb3f7;
-    --medPurple: #aa94d7;
-    --darkPurple: #7739f5;
-    --highDarkPurple: #3a2f56;
-    --lightBlue: #dbe1ed;
-    --medBlue: #5583df;
+    --aqua: #4dd6dc;
+    --darkAqua: #1e7b8b;
+    --darkMedBlue: #1b59b1;
     --darkBlue: #082d64;
-    --aqua: #4bb3b2;
+    --mainContent: var(--lightBlue);
+    --lightBlue: #c4d7f5;
+    --medBlue: #5583df;
+    --topBar: var(--darkBlue);
+    --trackButton: linear-gradient(to right, var(--aqua), var(--medBlue));
+    --topBarBorder: var(--aqua);
+    --bodyText: var(--medGrey);
+    --bodyTextTitle: var(--darkGrey);
+  }
+
+  [data-theme="dark"] {
+    --topBar: var(--darkGrey);
+    --trackButton: linear-gradient(to right, var(--darkAqua), var(--darkMedBlue));
+    --boxShadowBody: inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
+    --mainContent: var(--medGrey);
+    --topBarBorder: var(--lightGrey);
+    --bodyText: white;
+    --bodyTextTitle: var(--aqua);
+  }
+
+  .bg-topbar {
+    background-color: var(--topBar);
+  }
+
+  .track-button {
+    background: var(--trackButton);
+  }
+  
+  .bg-main-content {
+    background-color: var(--mainContent);
   }
 
   * {
@@ -26,7 +51,8 @@ const GlobalStyle = createGlobalStyle`
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-    hyphens: auto; 
+    hyphens: auto;
+    transition: all ease-in-out .5s;
   }
 
   .half-circled {
@@ -56,23 +82,7 @@ const GlobalStyle = createGlobalStyle`
     p {
       font-size: 1rem;
     }
-
-    .bg-dark-blue {
-      background-color: var(--darkBlue);
-    }
-  
-    .bg-med-blue {
-      background-color: var(--medBlue);
-    }
-  
-    .bg-light-blue {
-      background-color: var(--lightBlue);
-    }
-  
-    .track-button {
-      background: linear-gradient(to right, var(--aqua) , var(--medBlue));
-    }
-    
+   
     input[type="text"] {
       border-radius: 20px;
       width: 300px;

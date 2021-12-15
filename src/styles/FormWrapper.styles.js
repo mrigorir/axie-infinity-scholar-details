@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  border-left: dashed 3px var(--medBlue);
-  border-right: dashed 3px var(--aqua);
+  border-left: dashed 3px var(--topBarBorder);
+  border-right: dashed 3px var(--topBarBorder);
   padding: 0 100px;
 
   @media screen and (max-width: 520px) {

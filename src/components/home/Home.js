@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <>
-      <Row className="shadow-sm bg-dark-blue p-0 rounded">
+      <Row className="shadow-sm bg-topbar p-0 rounded">
         <Col md={12} className="p-0 mt-3">
           <Mainbar
             roninRef={roninRef}

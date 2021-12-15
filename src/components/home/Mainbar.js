@@ -4,6 +4,7 @@ import { Image } from 'react-bootstrap';
 import icon from '../../assets/icon/icon-2.png';
 import logo from '../../assets/icon/logo.png';
 import FormModal from '../modals/FormModal';
+import DarkMode from './DarkMode';
 import {
   TopBar, Title, DarkModeWrapper,
 } from '../../styles/Mainbar.styles';
@@ -12,6 +13,7 @@ function Mainbar({
   roninRef, managerPerRef, handleRonin,
 }) {
   return (
+
     <TopBar className="d-flex align-items-center justify-content-around flex-wrap">
       <Title>
         <Image fluid src={icon} height={100} width={100} className="icon" />
@@ -19,7 +21,7 @@ function Mainbar({
       </Title>
       <FormModal roninRef={roninRef} managerPerRef={managerPerRef} handleRonin={handleRonin} />
       <DarkModeWrapper className="mt-3">
-        darkMode
+        <DarkMode />
       </DarkModeWrapper>
     </TopBar>
   );

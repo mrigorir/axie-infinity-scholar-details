@@ -12,7 +12,7 @@ function App() {
   return (
     <Wrapper>
       <Container fluid className="py-5 m-0">
-        <Container className="shadow-sm rounded bg-light-blue">
+        <Container className="shadow-sm rounded bg-main-content">
           <Home />
         </Container>
       </Container>
