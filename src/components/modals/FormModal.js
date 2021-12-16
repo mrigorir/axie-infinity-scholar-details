@@ -5,8 +5,12 @@ import {
   Button, Modal, CloseButton, Form,
 } from 'react-bootstrap';
 import Wrapper from '../../styles/FormWrapper.styles';
+import ModalButtonWrapper from '../../styles/ModalButtonWrapper.styles';
 
-const FormModal = ({ roninRef, managerPerRef, handleRonin }) => {
+const FormModal = ({
+  roninRef, managerPerRef, scholarPerRef,
+  handleRonin, handlePercentage, percentage,
+}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -19,20 +23,37 @@ const FormModal = ({ roninRef, managerPerRef, handleRonin }) => {
         </Button>
       </Wrapper>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header className="bg-dark-purple text-white fs-4 fw-bold">
-          Input scholar details
+      <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal.Header className="text-white fs-5 fw-bold py-4 bg-outerModal text-uppercase border-0">
+          Scholar details
           <CloseButton className="btn-close-white border border-3 border-info p-2" onClick={handleClose} />
         </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={(e) => handleRonin(e, roninRef)} className="d-flex">
-            <Form.Control type="text" ref={managerPerRef} required placeholder="Manager Percentage" />
-            <Form.Control type="text" ref={roninRef} required placeholder="Ronin address with 0x format" />
-            <Modal.Footer>
-              <Button type="submit" className="primary ms-3 ps-4 pe-4 fs-5 fw-bold border-0">
-                Track
-              </Button>
-            </Modal.Footer>
+        <Modal.Body className="p-0 bg-innerModal">
+          <Form onSubmit={(e) => handleRonin(e, roninRef, managerPerRef, scholarPerRef)}>
+            <Form.Group className="p-3">
+              <Form.Label> Ronin address with 0x format </Form.Label>
+              <Form.Control size="lg" type="text" ref={roninRef} required placeholder="0x0a10f1c0f1959..." />
+            </Form.Group>
+            <Form.Group className="p-3">
+              <Form.Label> Scholar Percentage </Form.Label>
+              <Form.Control size="lg" type="text" ref={scholarPerRef} placeholder="0" required onKeyUp={handlePercentage} />
+            </Form.Group>
+            <Form.Group className="mb-3 p-3">
+              <Form.Label> Manager Percentage </Form.Label>
+              <Form.Control size="lg" type="text" ref={managerPerRef} value={percentage} disabled />
+            </Form.Group>
+            <ModalButtonWrapper className="d-flex align-items-center justify-content-center mt-2 p-3 bg-outerModal">
+              <Form.Group>
+                <Button
+                  type="submit"
+                  className="primary ms-3 fw-bold border-0 track-button-modal"
+                  id="submitDetails"
+                  onClick={handleClose}
+                >
+                  Track
+                </Button>
+              </Form.Group>
+            </ModalButtonWrapper>
           </Form>
         </Modal.Body>
       </Modal>
@@ -41,9 +62,12 @@ const FormModal = ({ roninRef, managerPerRef, handleRonin }) => {
 };
 
 FormModal.propTypes = {
-  managerPerRef: PropTypes.number.isRequired,
+  managerPerRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  scholarPerRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
   roninRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleRonin: PropTypes.func.isRequired,
+  handlePercentage: PropTypes.func.isRequired,
+  percentage: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 };
 
 export default FormModal;

@@ -3,10 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --lightGrey: #eee;
+    --blue: #84a2d3;
     --grey: #ddd;
     --medGrey: #585656;
     --darkGrey: #1c1c1c;
-    --aqua: #4dd6dc;
+    --aqua: #3feaf1;
     --darkAqua: #1e7b8b;
     --darkMedBlue: #1b59b1;
     --darkBlue: #082d64;
@@ -17,17 +18,28 @@ const GlobalStyle = createGlobalStyle`
     --trackButton: linear-gradient(to right, var(--aqua), var(--medBlue));
     --topBarBorder: var(--aqua);
     --bodyText: var(--medGrey);
-    --bodyTextTitle: var(--darkGrey);
+    --bodyTextTitle: var(--medGrey);
+    --textForm: white;
+    --trackButtonModal: var(--medGrey);
+    --bgOuterModal: var(--blue);
+    --bgInnerModal: var(--grey);
+    --labelTextModal: var(--medGrey);
+    --disabled: #bdb6b6;
   }
 
   [data-theme="dark"] {
     --topBar: var(--darkGrey);
-    --trackButton: linear-gradient(to right, var(--darkAqua), var(--darkMedBlue));
     --boxShadowBody: inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
     --mainContent: var(--medGrey);
     --topBarBorder: var(--lightGrey);
     --bodyText: white;
     --bodyTextTitle: var(--aqua);
+    --textForm: white;
+    --trackButton: linear-gradient(to right, var(--darkAqua), var(--darkMedBlue));
+    --trackButtonModal: var(--darkAqua);
+    --bgOuterModal: var(--darkGrey);
+    --bgInnerModal: var(--medGrey);
+    --labelTextModal: var(--aqua);
   }
 
   .bg-topbar {
@@ -42,6 +54,14 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--mainContent);
   }
 
+  .bg-outerModal {
+    background-color: var(--bgOuterModal);
+  }
+
+  .bg-innerModal {
+    background-color: var(--bgInnerModal);
+  }
+
   * {
     box-sizing: border-box;
     font-family: 'Abel', sans-serif;
@@ -52,7 +72,6 @@ const GlobalStyle = createGlobalStyle`
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    transition: all ease-in-out .5s;
   }
 
   .half-circled {
@@ -82,11 +101,24 @@ const GlobalStyle = createGlobalStyle`
     p {
       font-size: 1rem;
     }
+
+    label {
+      color: var(--labelTextModal);
+      font-size: 20px;
+      font-weight: bold;
+    }
    
     input[type="text"] {
       border-radius: 20px;
-      width: 300px;
-      color: var(--darkBlue);
+      color: var(--textForm);
+      background-color: var(--bgOuterModal);
+      border: none;
+    }
+
+    input:disabled {
+      background-color: var(--disabled)!important;
+      color: var(--medGrey);
+      font-weight: bold;
     }
 
     input[type="text"]:focus {
@@ -98,8 +130,12 @@ const GlobalStyle = createGlobalStyle`
 
     input[type="text"]::placeholder {
       font-size: 16px;
-      color: var(--medBlue);
+      color: var(--textForm);
       font-weight: bold;
+    }
+
+    input:disabled::placeholder {
+      color: var(--darkGrey);
     }
   }
 `;

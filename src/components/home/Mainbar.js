@@ -10,7 +10,8 @@ import {
 } from '../../styles/Mainbar.styles';
 
 function Mainbar({
-  roninRef, managerPerRef, handleRonin,
+  roninRef, managerPerRef, scholarPerRef,
+  handleRonin, handlePercentage, percentage,
 }) {
   return (
 
@@ -19,7 +20,14 @@ function Mainbar({
         <Image fluid src={icon} height={100} width={100} className="icon" />
         <Image fluid src={logo} height={200} width={200} />
       </Title>
-      <FormModal roninRef={roninRef} managerPerRef={managerPerRef} handleRonin={handleRonin} />
+      <FormModal
+        roninRef={roninRef}
+        managerPerRef={managerPerRef}
+        handleRonin={handleRonin}
+        handlePercentage={handlePercentage}
+        scholarPerRef={scholarPerRef}
+        percentage={percentage}
+      />
       <DarkModeWrapper className="mt-3">
         <DarkMode />
       </DarkModeWrapper>
@@ -28,9 +36,12 @@ function Mainbar({
 }
 
 Mainbar.propTypes = {
-  managerPerRef: PropTypes.number.isRequired,
+  managerPerRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  scholarPerRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
   roninRef: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleRonin: PropTypes.func.isRequired,
+  handlePercentage: PropTypes.func.isRequired,
+  percentage: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 };
 
 export default Mainbar;

@@ -4,10 +4,18 @@ import PropTypes from 'prop-types';
 function Slp({
   todaySoFar, yesterdaySLP, average, totalSLP,
   lastClaim, nextClaim, lifetimeSLP, roninSLP,
-  inGameSLP,
+  inGameSLP, managerPer, scholarPer,
 }) {
   return (
     <>
+      <p>
+        Manager SLP percentage
+        { managerPer }
+      </p>
+      <p>
+        Scholar SLP percentage
+        { scholarPer }
+      </p>
       <p>
         SLP made yesterday
         { yesterdaySLP }
@@ -58,6 +66,8 @@ Slp.defaultProps = {
   lifetimeSLP: 0,
   roninSLP: 0,
   inGameSLP: 0,
+  managerPer: 0,
+  scholarPer: 0,
 };
 
 Slp.propTypes = {
@@ -70,6 +80,8 @@ Slp.propTypes = {
   lifetimeSLP: PropTypes.number,
   roninSLP: PropTypes.number,
   inGameSLP: PropTypes.number,
+  managerPer: PropTypes.number,
+  scholarPer: PropTypes.number,
 };
 
 export default Slp;

@@ -14,9 +14,9 @@ function Home() {
   const {
     slp, mmr, axies, roninRef, errorMessageAxies,
     errorMessageMMR, errorMessageSLP, handleRonin,
-    managerPerRef,
+    managerPerRef, scholarPerRef, handlePercentage,
+    percentage, storedDetails,
   } = hooks;
-
   return (
     <>
       <Row className="shadow-sm bg-topbar p-0 rounded">
@@ -24,7 +24,10 @@ function Home() {
           <Mainbar
             roninRef={roninRef}
             managerPerRef={managerPerRef}
+            scholarPerRef={scholarPerRef}
             handleRonin={handleRonin}
+            handlePercentage={handlePercentage}
+            percentage={percentage}
           />
         </Col>
       </Row>
@@ -51,6 +54,8 @@ function Home() {
               lifetimeSLP={slp[0].lifetimeSL}
               roninSLP={slp[0].roninSLP}
               inGameSLP={slp[0].inGameSLP}
+              managerPer={storedDetails[0].managerPer}
+              scholarPer={storedDetails[0].scholarPer}
             />
           )}
       </div>

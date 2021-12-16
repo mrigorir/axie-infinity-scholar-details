@@ -4,7 +4,6 @@ const TopBar = styled.div`
   box-shadow: 5px 5px 5xp var(--lightBlue);
   padding-bottom: 5px;
   border-radius: 0;
-  }
 `;
 
 const DarkModeWrapper = styled.div`
@@ -35,6 +34,7 @@ const DarkModeWrapper = styled.div`
     left: 0;
     right: 0;
     top: 0;
+    border-radius: 34px;
     transition: 0.2s;
   }
 
@@ -45,6 +45,7 @@ const DarkModeWrapper = styled.div`
     bottom: 4px;
     height: 26px;
     width: 26px;
+    border-radius: 50%;
     background-color: #fff;
     transition: 0.4s;
   }
@@ -55,14 +56,6 @@ const DarkModeWrapper = styled.div`
 
   input:checked + .slider {
     background: linear-gradient(to right, var(--aqua) , var(--medBlue));
-  }
-
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
   }
 
   @media screen and (max-width: 520px) {

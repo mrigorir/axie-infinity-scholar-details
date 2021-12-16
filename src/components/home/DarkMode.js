@@ -17,7 +17,7 @@ function DarkMode() {
           onChange={(e) => handleTheme(e)}
           defaultChecked={defaultDark}
         />
-        <div className="slider round"> </div>
+        <div className="slider"> </div>
       </label>
       <span>
         <Image fluid src={darkMode} height={100} width={100} className="icon" />

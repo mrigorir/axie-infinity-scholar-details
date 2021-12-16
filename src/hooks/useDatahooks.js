@@ -10,27 +10,49 @@ const useDatahooks = () => {
   const axies = useSelector((state) => state.axies);
   const roninRef = useRef();
   const managerPerRef = useRef();
+  const scholarPerRef = useRef();
   const dispatch = useDispatch();
-  const LOCAL_STORAGE_ID_SCHOLAR = 'id';
-  const storedId = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ID_SCHOLAR));
+  const LOCAL_STORAGE_SCHOLAR_DETAILS = 'scholarDetails';
+  const storedDetails = JSON.parse(localStorage.getItem(LOCAL_STORAGE_SCHOLAR_DETAILS));
   const [errorMessageMMR, setErrorMessageMMR] = useState('');
   const [errorMessageSLP, setErrorMessageSLP] = useState('');
   const [errorMessageAxies, setErrorMessageAxies] = useState('');
+  const [percentage, setPercentage] = useState(100);
 
-  const handleRonin = (e, roninRef) => {
+  const handleRonin = (e, roninRef, managerPerRef, scholarPerRef) => {
     const ronin = roninRef.current.value;
+    const scholarDetails = [];
+    scholarDetails.push(
+      {
+        ronin,
+        managerPer: managerPerRef.current.value,
+        scholarPer: scholarPerRef.current.value,
+      },
+    );
     e.preventDefault();
     dispatch(getSlpAction(ronin)).catch((error) => setErrorMessageSLP(`SLP: ${error.message}`));
     dispatch(getMmrAction(ronin)).catch((error) => setErrorMessageMMR(`MMR: ${error.message}`));
     dispatch(getAxiesAction(ronin)).catch((error) => setErrorMessageAxies(`Axies data: ${error.message}`));
-    localStorage.setItem(LOCAL_STORAGE_ID_SCHOLAR, JSON.stringify(ronin));
+    localStorage.setItem(LOCAL_STORAGE_SCHOLAR_DETAILS, JSON.stringify(scholarDetails));
+  };
+
+  const handlePercentage = () => {
+    const managerCurrentPer = 100 - (scholarPerRef.current.value);
+    const button = document.getElementById('submitDetails');
+    if (managerCurrentPer > 100 || managerCurrentPer < 0 || Number.isNaN(managerCurrentPer)) {
+      setPercentage('Invalid format.');
+      button.setAttribute('disabled', true);
+    } else {
+      setPercentage(managerCurrentPer);
+      button.removeAttribute('disabled');
+    }
   };
 
   useEffect(() => {
-    if (storedId !== null) {
-      dispatch(getSlpAction(storedId));
-      dispatch(getMmrAction(storedId));
-      dispatch(getAxiesAction(storedId));
+    if (storedDetails && storedDetails[0].ronin !== null) {
+      dispatch(getSlpAction(storedDetails[0].ronin));
+      dispatch(getMmrAction(storedDetails[0].ronin));
+      dispatch(getAxiesAction(storedDetails[0].ronin));
     }
   }, []);
 
@@ -40,10 +62,14 @@ const useDatahooks = () => {
     axies,
     roninRef,
     managerPerRef,
+    scholarPerRef,
     errorMessageMMR,
     errorMessageSLP,
     errorMessageAxies,
     handleRonin,
+    handlePercentage,
+    percentage,
+    storedDetails,
   };
 };
 
