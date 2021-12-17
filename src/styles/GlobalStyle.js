@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
   
   .bg-main-content {
     background-color: var(--mainContent);
+    transition: all ease-in-out .4s;
   }
 
   .bg-outerModal {

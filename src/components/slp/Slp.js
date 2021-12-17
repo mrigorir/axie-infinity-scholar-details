@@ -6,6 +6,8 @@ function Slp({
   lastClaim, nextClaim, lifetimeSLP, roninSLP,
   inGameSLP, managerPer, scholarPer,
 }) {
+  const currentScholarSLP = Math.round(inGameSLP * (scholarPer / 100));
+  const currentManagerSLP = Math.round(inGameSLP * (managerPer / 100));
   return (
     <>
       <p>
@@ -15,6 +17,14 @@ function Slp({
       <p>
         Scholar SLP percentage
         { scholarPer }
+      </p>
+      <p>
+        Scholar corresponding SLP:
+        {currentScholarSLP}
+      </p>
+      <p>
+        Manager corresponding SLP:
+        {currentManagerSLP}
       </p>
       <p>
         SLP made yesterday
