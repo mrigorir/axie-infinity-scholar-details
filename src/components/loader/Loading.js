@@ -1,10 +1,12 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
+import SpinnerWrapper from '../../styles/SpinnerWrapper.styles';
 
 function Loading() {
   return (
-    <div>
-      Loading...
-    </div>
+    <SpinnerWrapper>
+      <Spinner animation="border" role="status" className="color-spinner" />
+    </SpinnerWrapper>
   );
 }
 

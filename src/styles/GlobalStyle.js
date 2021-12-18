@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     --labelTextModal: var(--medGrey);
     --disabled: #bdb6b6;
     --bg-slider: white;
+    --color-spinner: var(--medBlue);
   }
 
   [data-theme="dark"] {
@@ -42,10 +43,15 @@ const GlobalStyle = createGlobalStyle`
     --bgInnerModal: var(--medGrey);
     --labelTextModal: var(--aqua);
     --bg-slider: var(--lightBlue);
+    --color-spinner: var(--aqua);
   }
-
+ 
   .bg-topbar {
     background-color: var(--topBar);
+  }
+
+  .color-spinner {
+    color: var(--color-spinner);
   }
 
   .track-button {
