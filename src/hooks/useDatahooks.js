@@ -21,12 +21,22 @@ const useDatahooks = () => {
 
   const handleRonin = (e, roninRef, managerPerRef, scholarPerRef) => {
     const ronin = roninRef.current.value;
+    const manager = managerPerRef.current.value;
+    const scholar = scholarPerRef.current.value;
     const scholarDetails = [];
+
     scholarDetails.push(
       {
-        ronin,
-        managerPer: managerPerRef.current.value,
-        scholarPer: scholarPerRef.current.value,
+        title: 'Player ronin',
+        data: ronin,
+      },
+      {
+        title: 'Manger SLP earned',
+        data: manager,
+      },
+      {
+        title: 'Scholar SLP earned',
+        data: scholar,
       },
     );
     e.preventDefault();
@@ -49,10 +59,10 @@ const useDatahooks = () => {
   };
 
   useEffect(() => {
-    if (storedDetails && storedDetails[0].ronin !== null) {
-      dispatch(getSlpAction(storedDetails[0].ronin));
-      dispatch(getMmrAction(storedDetails[0].ronin));
-      dispatch(getAxiesAction(storedDetails[0].ronin));
+    if (storedDetails && storedDetails[0].data !== null) {
+      dispatch(getSlpAction(storedDetails[0].data));
+      dispatch(getMmrAction(storedDetails[0].data));
+      dispatch(getAxiesAction(storedDetails[0].data));
     }
   }, []);
 

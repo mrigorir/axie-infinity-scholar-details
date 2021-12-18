@@ -28,26 +28,50 @@ const getSlpAction = (id) => async (dispatch) => {
   const lunacia = await getLunacia(id);
   const {
     totalSLP, lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
-    winTotal, loseTotal, drawTotal, totalMatches,
   } = lunacia[0];
   const slp = [
     {
-      todaySoFar,
-      yesterdaySLP,
-      average,
-      winRate,
-      winTotal,
-      loseTotal,
-      drawTotal,
-      totalMatches,
-      totalSLP,
-      lastClaim,
-      nextClaim,
-      lifetimeSLP,
-      roninSLP,
-      inGameSLP,
+      title: 'SLP in game',
+      data: inGameSLP,
+    },
+    {
+      title: 'SLP made so far',
+      data: todaySoFar,
+    },
+    {
+      title: 'SLP made yesterday',
+      data: yesterdaySLP,
+    },
+    {
+      title: 'Average',
+      data: average,
+    },
+    {
+      title: 'Win rate',
+      data: winRate,
+    },
+    {
+      title: 'Total SLP',
+      data: totalSLP,
+    },
+    {
+      title: ' Last claim',
+      data: lastClaim,
+    },
+    {
+      title: 'Next Claim',
+      data: nextClaim,
+    },
+    {
+      title: 'Lifetime SLP',
+      data: lifetimeSLP,
+    },
+    {
+      title: 'SLP at ronin',
+      data: roninSLP,
     },
   ];
+
   dispatch({
     type: GET_SLP_STATUS,
     payload: slp,

@@ -2,11 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --shadow-main-title: rgba(0, 0, 0, 0.3);
     --lightGrey: #eee;
     --blue: #84a2d3;
     --grey: #ddd;
     --medGrey: #585656;
     --darkGrey: #1c1c1c;
+    --medBlack: #303030;
     --aqua: #3feaf1;
     --darkAqua: #1e7b8b;
     --darkMedBlue: #1b59b1;
@@ -27,9 +29,12 @@ const GlobalStyle = createGlobalStyle`
     --disabled: #bdb6b6;
     --bg-slider: white;
     --color-spinner: var(--medBlue);
+    --bg-main-title: var(--medBlue);
+    --color-main-title: white;
   }
 
   [data-theme="dark"] {
+    --shadow-main-title: rgba(0, 0, 0, 0.5);
     --topBar: var(--darkGrey);
     --boxShadowBody: inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
     --mainContent: var(--medGrey);
@@ -44,6 +49,12 @@ const GlobalStyle = createGlobalStyle`
     --labelTextModal: var(--aqua);
     --bg-slider: var(--lightBlue);
     --color-spinner: var(--aqua);
+    --bg-main-title: var(--medBlack);
+    --color-main-title: var(--aqua);
+  }
+
+  .bg-main-title {
+    background-color: var(--bg-main-title);
   }
  
   .bg-topbar {
@@ -81,6 +92,13 @@ const GlobalStyle = createGlobalStyle`
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+  }
+
+  .truncate {
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .half-circled {

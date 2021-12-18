@@ -8,6 +8,7 @@ import Message from '../messages/Message';
 import Loading from '../loader/Loading';
 import Axie from '../axie/Axie';
 import Mainbar from './Mainbar';
+import Header from '../../styles/Header.style';
 
 function Home() {
   const hooks = useDatahooks();
@@ -31,34 +32,24 @@ function Home() {
           />
         </Col>
       </Row>
-      <h1>
-        {errorMessageSLP && <Message message={errorMessageSLP} />}
-      </h1>
-      <h1>
-        {errorMessageMMR && <Message message={errorMessageMMR} />}
-      </h1>
-      <h1>
-        {errorMessageAxies && <Message message={errorMessageAxies} />}
-      </h1>
-      <div>
-        SLP:
-        {(mmr[0].elo === 0 || slp[0].lastClaim === 0) ? <Loading />
-          : (
-            <Slp
-              todaySoFar={slp[0].todaySoFar}
-              yesterdaySLP={slp[0].yesterdaySLP}
-              average={slp[0].average}
-              totalSLP={slp[0].totalSLP}
-              lastClaim={slp[0].lastClaim}
-              nextClaim={slp[0].nextClaim}
-              lifetimeSLP={slp[0].lifetimeSL}
-              roninSLP={slp[0].roninSLP}
-              inGameSLP={slp[0].inGameSLP}
-              managerPer={storedDetails[0].managerPer}
-              scholarPer={storedDetails[0].scholarPer}
-            />
-          )}
-      </div>
+      {errorMessageSLP && <Message message={errorMessageSLP} />}
+      {errorMessageMMR && <Message message={errorMessageMMR} />}
+      {errorMessageAxies && <Message message={errorMessageAxies} />}
+      <Row>
+        <Col md={12} className="p-0">
+          <Header className="bg-main-title color-main-title">
+            SLP
+          </Header>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={12} className="p-0">
+          {(mmr[0].elo === 0 || slp[0].data === 0) ? <Loading />
+            : (
+              <Slp slp={slp} stored={storedDetails} />
+            )}
+        </Col>
+      </Row>
       <div>
         MMR:
         {(mmr[0].elo === 0 || slp[0].lastClaim === 0) ? <Loading />
