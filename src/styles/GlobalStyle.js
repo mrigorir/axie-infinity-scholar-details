@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     --bgInnerModal: var(--grey);
     --labelTextModal: var(--medGrey);
     --disabled: #bdb6b6;
+    --bg-slider: white;
   }
 
   [data-theme="dark"] {
@@ -40,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     --bgOuterModal: var(--darkGrey);
     --bgInnerModal: var(--medGrey);
     --labelTextModal: var(--aqua);
+    --bg-slider: var(--lightBlue);
   }
 
   .bg-topbar {

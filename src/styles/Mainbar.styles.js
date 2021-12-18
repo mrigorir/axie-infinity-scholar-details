@@ -46,7 +46,7 @@ const DarkModeWrapper = styled.div`
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--bg-slider);
     transition: 0.4s;
   }
 
