@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { Card } from 'react-bootstrap';
-import icon from '../../assets/icon/icon.png';
+import icon from '../../assets/icon/icon-2.png';
 
 function Slp({ slp, stored }) {
   return (
