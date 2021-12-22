@@ -29,7 +29,7 @@ const useDatahooks = () => {
       {
         title: 'Player ronin',
         data: ronin,
-        url: '../../assets/images/slp/slp-',
+        url: '../../assets/images/slp/slp',
       },
       {
         title: 'Manager SLP earned',
