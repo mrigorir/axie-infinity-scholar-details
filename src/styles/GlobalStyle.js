@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --shadow-main-title: rgba(0, 0, 0, 0.3);
+    --purple: #8f68df;
     --lightGrey: #eee;
     --blue: #84a2d3;
     --grey: #ddd;
@@ -31,6 +32,9 @@ const GlobalStyle = createGlobalStyle`
     --color-spinner: var(--medBlue);
     --bg-main-title: var(--medBlue);
     --color-main-title: white;
+    --bg-section-1:  linear-gradient(to right, var(--blue), var(--medBlue));
+    --text-color-section-title: var(--darkMedBlue);
+    --text-color-section-text: var(--purple);
   }
 
   [data-theme="dark"] {
@@ -51,6 +55,9 @@ const GlobalStyle = createGlobalStyle`
     --color-spinner: var(--aqua);
     --bg-main-title: var(--medBlack);
     --color-main-title: var(--aqua);
+    --bg-section-1: var(--grey);
+    --text-color-section-title: var(--darkAqua);
+    --text-color-section-text: var(--aqua);
   }
 
   .bg-main-title {
@@ -80,6 +87,18 @@ const GlobalStyle = createGlobalStyle`
 
   .bg-innerModal {
     background-color: var(--bgInnerModal);
+  }
+
+  .bg-section-1 {
+    background: var(--bg-section-1);
+  }
+
+  .text-color-section-title {
+    color: var(--text-color-section-title);
+  }
+
+  .text-color-section-text {
+    color: var(--text-color-section-text)!important;
   }
 
   * {

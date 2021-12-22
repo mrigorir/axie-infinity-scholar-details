@@ -27,48 +27,53 @@ const getSlpAction = (id) => async (dispatch) => {
   } = stats[0];
   const lunacia = await getLunacia(id);
   const {
-    totalSLP, lastClaim, nextClaim, lifetimeSLP, roninSLP, inGameSLP,
+    totalSLP, lastClaim, nextClaim, roninSLP, inGameSLP,
   } = lunacia[0];
   const slp = [
     {
       title: 'SLP in game',
       data: inGameSLP,
+      url: 'https://live.staticflickr.com/65535/51762558501_a3682868f0_n.jpg',
     },
     {
       title: 'SLP made so far',
       data: todaySoFar,
+      url: '../../assets/images/slp/slp-',
     },
     {
       title: 'SLP made yesterday',
       data: yesterdaySLP,
+      url: '../../assets/images/slp/slp-',
     },
     {
       title: 'Average',
       data: average,
+      url: '../../assets/images/slp/slp-',
     },
     {
       title: 'Win rate',
       data: winRate,
+      url: '../../assets/images/slp/slp-',
     },
     {
       title: 'Total SLP',
       data: totalSLP,
+      url: '../../assets/images/slp/slp-',
     },
     {
       title: ' Last claim',
       data: lastClaim,
+      url: '../../assets/images/slp/slp-',
     },
     {
       title: 'Next Claim',
       data: nextClaim,
-    },
-    {
-      title: 'Lifetime SLP',
-      data: lifetimeSLP,
+      url: '../../assets/images/slp/slp-',
     },
     {
       title: 'SLP at ronin',
       data: roninSLP,
+      url: '../../assets/images/slp/slp-',
     },
   ];
 

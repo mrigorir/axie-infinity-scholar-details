@@ -45,7 +45,6 @@ const getLunacia = async (id) => {
       totalSLP: data.total_slp,
       lastClaim: data.last_claim,
       nextClaim: data.next_claim,
-      lifetimeSLP: data.lifetime_slp,
       roninSLP: data.ronin_slp,
       inGameSLP: data.in_game_slp,
       winTotal: data.win_total,

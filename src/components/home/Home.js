@@ -9,6 +9,7 @@ import Loading from '../loader/Loading';
 import Axie from '../axie/Axie';
 import Mainbar from './Mainbar';
 import Header from '../../styles/Header.style';
+import CardWrapper from '../../styles/CardWrapper.styles';
 
 function Home() {
   const hooks = useDatahooks();
@@ -36,17 +37,19 @@ function Home() {
       {errorMessageMMR && <Message message={errorMessageMMR} />}
       {errorMessageAxies && <Message message={errorMessageAxies} />}
       <Row>
-        <Col md={12} className="p-0">
+        <Col md={12} className="p-0 bg-section-1">
           <Header className="bg-main-title color-main-title">
             SLP
           </Header>
         </Col>
       </Row>
       <Row>
-        <Col md={12} className="p-0">
+        <Col md={12} className="p-4 bg-section-1">
           {(mmr[0].elo === 0 || slp[0].data === 0) ? <Loading />
             : (
-              <Slp slp={slp} stored={storedDetails} />
+              <CardWrapper>
+                <Slp slp={slp} stored={storedDetails} />
+              </CardWrapper>
             )}
         </Col>
       </Row>
