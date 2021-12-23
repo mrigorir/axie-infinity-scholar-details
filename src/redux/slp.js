@@ -33,47 +33,47 @@ const getSlpAction = (id) => async (dispatch) => {
     {
       title: 'SLP in game',
       data: inGameSLP,
-      url: 'https://live.staticflickr.com/65535/51762558501_a3682868f0_n.jpg',
+      url: 'https://lh3.google.com/u/0/d/1GAqE8JQRHZJbf6zQBdccM2oPS38XzbBN=w200-h190-p-k-nu-iv1',
     },
     {
       title: 'SLP made so far',
       data: todaySoFar,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/1oFW0dAEjHKIOs97r-1ZJ4vx9Cgpt2-tP=w200-h190-p-k-nu-iv1',
     },
     {
       title: 'SLP made yesterday',
       data: yesterdaySLP,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/1T2S4_HixnSgqkiBYlpmJC_e-ytiFaY6q=w200-h190-p-k-nu-iv1',
     },
     {
       title: 'Average',
       data: average,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/15mLfI6sDGjftGfOaAjLh8kjS5DF0EK2E=w200-h190-p-k-nu-iv1',
     },
     {
       title: 'Win rate',
       data: winRate,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/1Yaj1pvs-ARQYOiKI5HyZNG-xsrvZv0C7=w200-h190-p-k-nu-iv1',
     },
     {
       title: 'Total SLP',
       data: totalSLP,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/1aLs9Er-UkkFnNm8_Ywo-hjYSkSFf_zIU=w200-h190-p-k-nu-iv1',
     },
     {
       title: ' Last claim',
       data: lastClaim,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/1wXRAPWUrK_6bsEoqTuBkjqfo7bfYMQ_J=w200-h190-p-k-nu-iv1',
     },
     {
       title: 'Next Claim',
       data: nextClaim,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/1DKYrs83EnQFVTtBndV8HGHEyNo3smHhs=w200-h190-p-k-nu-iv1',
     },
     {
       title: 'SLP at ronin',
       data: roninSLP,
-      url: '../../assets/images/slp/slp-',
+      url: 'https://lh3.google.com/u/0/d/1XSQLVGEtfWqp5H2EpAfTB6oeNJ_s8wAP=w200-h190-p-k-nu-iv1',
     },
   ];
 
