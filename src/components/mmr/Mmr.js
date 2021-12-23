@@ -1,74 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
+import { Card } from 'react-bootstrap';
 
-function Mmr({
-  clientId, name, elo, rank, winRate, winTotal,
-  loseTotal, drawTotal, totalMatches,
-}) {
+function Mmr({ mmr }) {
   return (
     <>
-      <p>
-        Client id:
-        { clientId }
-      </p>
-      <p>
-        Name:
-        { name }
-      </p>
-      <p>
-        Elo:
-        { elo }
-      </p>
-      <p>
-        Rank:
-        { rank }
-      </p>
-      <p>
-        Win rate (%):
-        { winRate }
-      </p>
-      <p>
-        Win total:
-        { winTotal }
-      </p>
-      <p>
-        Lose total:
-        { loseTotal }
-      </p>
-      <p>
-        Draw total:
-        { drawTotal }
-      </p>
-      <p>
-        Total matches:
-        { totalMatches }
-      </p>
+      {mmr.map((mmr) => {
+        const { title, data } = mmr;
+        return (
+          <Card style={{ width: '18rem', borderRadius: '20px' }} key={uuidv4()} className="shadow-sm border-0 p-2 m-3">
+            <Card.Body className="d-flex align-items-center justify-content-between">
+              <div>
+                <Card.Title className="text-color-section-title fw-bold fs-5 pb-4">
+                  { title }
+                </Card.Title>
+                <Card.Text className="truncate text-color-section-text fw-bold fs-6">
+                  { data }
+                </Card.Text>
+              </div>
+              {/* <Card.Img src={url} width={100} height={100} className="ms-4" /> */}
+            </Card.Body>
+          </Card>
+        );
+      })}
     </>
   );
 }
 
-Mmr.defaultProps = {
-  winRate: 'unavailable',
-  winTotal: 0,
-  loseTotal: 0,
-  drawTotal: 0,
-  totalMatches: 0,
-  clientId: 'unavailable',
-  name: 'unavailable',
-  elo: 0,
-  rank: 0,
-};
-
 Mmr.propTypes = {
-  winRate: PropTypes.string,
-  winTotal: PropTypes.number,
-  loseTotal: PropTypes.number,
-  drawTotal: PropTypes.number,
-  totalMatches: PropTypes.number,
-  clientId: PropTypes.string,
-  name: PropTypes.string,
-  elo: PropTypes.number,
-  rank: PropTypes.number,
+  mmr: PropTypes.oneOfType([PropTypes.array]).isRequired,
 };
 
 export default Mmr;

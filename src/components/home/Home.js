@@ -45,7 +45,7 @@ function Home() {
       </Row>
       <Row>
         <Col md={12} className="p-4 bg-section-1">
-          {(mmr[0].elo === 0 || slp[0].data === 0) ? <Loading />
+          {(mmr[0].data === 0 || slp[0].data === 0) ? <Loading />
             : (
               <CardWrapper>
                 <Slp slp={slp} stored={storedDetails} />
@@ -55,19 +55,9 @@ function Home() {
       </Row>
       <div>
         MMR:
-        {(mmr[0].elo === 0 || slp[0].lastClaim === 0) ? <Loading />
+        {(mmr[0].data === 0 || slp[0].data === 0) ? <Loading />
           : (
-            <Mmr
-              clientId={mmr[0].clientId}
-              name={mmr[0].name}
-              elo={mmr[0].elo}
-              rank={mmr[0].rank}
-              winRate={slp[0].winRate}
-              winTotal={slp[0].winTotal}
-              loseTotal={slp[0].loseTotal}
-              drawTotal={slp[0].drawTotal}
-              totalMatches={slp[0].totalMatches}
-            />
+            <Mmr mmr={mmr} />
           )}
       </div>
       Axies:
