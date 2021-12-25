@@ -18,6 +18,7 @@ function Mmr({ mmr }) {
                 <Card.Text className="truncate text-color-section-text fw-bold fs-6">
                   { data }
                 </Card.Text>
+                {/* <Card.Img src={url} width={100} height={100} className="ms-4" /> */}
               </div>
             </Card.Body>
           </Card>
