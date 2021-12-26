@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --shadow-main-title: rgba(0, 0, 0, 0.3);
+    /* colors */
+
     --purple: #8f68df;
     --lightGrey: #eee;
     --blue: #84a2d3;
@@ -17,11 +18,20 @@ const GlobalStyle = createGlobalStyle`
     --mainContent: var(--lightBlue);
     --lightBlue: #c4d7f5;
     --medBlue: #5583df;
+
+    /* shadows */
+
+    --shadow-main-title: rgba(0, 0, 0, 0.3);
+
+    /* loader */
+
+    --color-spinner: var(--medBlue);
+
+    /* navBar */
+
     --topBar: var(--darkBlue);
     --trackButton: linear-gradient(to right, var(--aqua), var(--medBlue));
     --topBarBorder: var(--aqua);
-    --bodyText: var(--medGrey);
-    --bodyTextTitle: var(--medGrey);
     --textForm: white;
     --trackButtonModal: var(--medGrey);
     --bgOuterModal: var(--blue);
@@ -29,22 +39,32 @@ const GlobalStyle = createGlobalStyle`
     --labelTextModal: var(--medGrey);
     --disabled: #bdb6b6;
     --bg-slider: white;
-    --color-spinner: var(--medBlue);
+
+    /* body */
+
+    --bodyText: var(--medGrey);
+    --bodyTextTitle: var(--medGrey);
     --bg-main-title: var(--medBlue);
     --color-main-title: white;
-    --bg-section-1:  linear-gradient(to right, var(--blue), var(--medBlue));
+    --bg-section-1: linear-gradient(to right, var(--blue), var(--medBlue));
     --text-color-section-title: var(--darkMedBlue);
     --text-color-section-text: var(--purple);
   }
 
   [data-theme="dark"] {
+    /* shadows */
+
     --shadow-main-title: rgba(0, 0, 0, 0.5);
-    --topBar: var(--darkGrey);
     --boxShadowBody: inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
-    --mainContent: var(--medGrey);
+
+    /* loader */
+
+    --color-spinner: var(--aqua);
+    
+    /* navBar */
+
+    --topBar: var(--darkGrey);
     --topBarBorder: var(--lightGrey);
-    --bodyText: white;
-    --bodyTextTitle: var(--aqua);
     --textForm: white;
     --trackButton: linear-gradient(to right, var(--darkAqua), var(--darkMedBlue));
     --trackButtonModal: var(--darkAqua);
@@ -52,7 +72,12 @@ const GlobalStyle = createGlobalStyle`
     --bgInnerModal: var(--medGrey);
     --labelTextModal: var(--aqua);
     --bg-slider: var(--lightBlue);
-    --color-spinner: var(--aqua);
+    
+    /* body */
+
+    --mainContent: var(--medGrey);
+    --bodyText: white;
+    --bodyTextTitle: var(--aqua);
     --bg-main-title: var(--medBlack);
     --color-main-title: var(--aqua);
     --bg-section-1: var(--grey);

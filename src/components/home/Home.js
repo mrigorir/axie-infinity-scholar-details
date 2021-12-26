@@ -53,39 +53,58 @@ function Home() {
             )}
         </Col>
       </Row>
-      <div>
-        MMR:
-        {(mmr[0].data === 0 || slp[0].data === 0) ? <Loading />
-          : (
-            <Mmr mmr={mmr} />
-          )}
-      </div>
-      Axies:
-      {axies.results === 0 ? <Loading />
-        : (
-          <ul>
-            Total:
-            {axies[0].total}
-            {axies[0].results.map((axie) => {
-              const {
-                id, name, breedCount, image, parts,
-              } = axie;
-              return (
-                <li key={uuidv4()}>
-                  <Axie
-                    id={id}
-                    name={name}
-                    type={axie.class}
-                    breedCount={breedCount}
-                    image={image}
-                    parts={parts}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        )}
-
+      <Row>
+        <Col md={12} className="p-0 bg-section-2">
+          <Header className="bg-main-title color-main-title">
+            MMR
+          </Header>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={12} className="py-4 bg-section-2">
+          {(mmr[0].data === 0 || slp[0].data === 0) ? <Loading />
+            : (
+              <CardWrapper>
+                <Mmr mmr={mmr} />
+              </CardWrapper>
+            )}
+        </Col>
+      </Row>
+      <Row>
+        <Col md={12} className="p-0 bg-section-3 bg-darkBlue">
+          <Header className="bg-main-title color-main-title">
+            Axies
+          </Header>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={12} className="p-4 bg-section-3 bg-darkBlue">
+          {axies.results === 0 ? <Loading />
+            : (
+              <ul>
+                Total:
+                {axies[0].total}
+                {axies[0].results.map((axie) => {
+                  const {
+                    id, name, breedCount, image, parts,
+                  } = axie;
+                  return (
+                    <li key={uuidv4()}>
+                      <Axie
+                        id={id}
+                        name={name}
+                        type={axie.class}
+                        breedCount={breedCount}
+                        image={image}
+                        parts={parts}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+        </Col>
+      </Row>
     </>
   );
 }
