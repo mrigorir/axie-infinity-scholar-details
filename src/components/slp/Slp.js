@@ -9,7 +9,7 @@ function Slp({ slp, stored }) {
       {stored.map((stored) => {
         const { title, data, url } = stored;
         return (
-          <Card style={{ width: '18rem', borderRadius: '20px' }} key={uuidv4()} className="shadow-sm border-0 p-2 m-3">
+          <Card style={{ width: '18rem', borderRadius: '20px' }} key={uuidv4()} className="shadow-sm border-0 p-2 m-3 bg-card-1">
             <Card.Body className="d-flex align-items-center justify-content-between">
               <div>
                 <Card.Title className="text-color-section-title fw-bold fs-5 pb-4">
@@ -27,7 +27,7 @@ function Slp({ slp, stored }) {
       { slp.map((slp) => {
         const { title, data, url } = slp;
         return (
-          <Card style={{ width: '18rem', borderRadius: '20px' }} key={uuidv4()} className="shadow-sm border-0 p-2 m-3">
+          <Card style={{ width: '18rem', borderRadius: '20px' }} key={uuidv4()} className="shadow-sm border-0 p-2 m-3 bg-card-1">
             <Card.Body className="d-flex align-items-center justify-content-between">
               <div>
                 <Card.Title className="text-color-section-title fw-bold fs-5 pb-4">

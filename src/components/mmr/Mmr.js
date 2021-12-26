@@ -7,19 +7,19 @@ function Mmr({ mmr }) {
   return (
     <>
       {mmr.map((mmr) => {
-        const { title, data } = mmr;
+        const { title, data, url } = mmr;
         return (
-          <Card style={{ width: '18rem', borderRadius: '20px' }} key={uuidv4()} className="shadow-sm border-0 p-2 m-3">
+          <Card style={{ width: '18rem', borderRadius: '20px' }} key={uuidv4()} className="shadow-sm border-0 p-2 m-3 bg-card-2">
             <Card.Body className="d-flex align-items-center justify-content-between">
               <div>
-                <Card.Title className="text-color-section-title fw-bold fs-5 pb-4">
+                <Card.Title className="text-color-section-title-2 fw-bold fs-5 pb-4">
                   { title }
                 </Card.Title>
                 <Card.Text className="truncate text-color-section-text fw-bold fs-6">
                   { data }
                 </Card.Text>
-                {/* <Card.Img src={url} width={100} height={100} className="ms-4" /> */}
               </div>
+              <Card.Img src={url} width={100} height={100} className="ms-4" />
             </Card.Body>
           </Card>
         );

@@ -5,7 +5,8 @@ const GlobalStyle = createGlobalStyle`
     /* colors */
 
     --purple: #8f68df;
-    --lightGrey: #eee;
+    --light: #ebe9e9;
+    --lightGrey: #ebe9e9;
     --blue: #84a2d3;
     --grey: #ddd;
     --medGrey: #585656;
@@ -18,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     --mainContent: var(--lightBlue);
     --lightBlue: #c4d7f5;
     --medBlue: #5583df;
+    --lightDarkBlue: #1563d7;
 
     /* shadows */
 
@@ -47,8 +49,11 @@ const GlobalStyle = createGlobalStyle`
     --bg-main-title: var(--medBlue);
     --color-main-title: white;
     --bg-section-1: linear-gradient(to right, var(--blue), var(--medBlue));
+    --bg-section-3: linear-gradient(to right, var(--medBlue), var(--darkBlue));
     --text-color-section-title: var(--darkMedBlue);
+    --text-color-section-title-2: var(--blue);
     --text-color-section-text: var(--purple);
+    --bg-card-1: var(--ligh);
   }
 
   [data-theme="dark"] {
@@ -81,8 +86,11 @@ const GlobalStyle = createGlobalStyle`
     --bg-main-title: var(--medBlack);
     --color-main-title: var(--aqua);
     --bg-section-1: var(--grey);
+    --bg-section-3: linear-gradient(to right, var(--grey), var(--medGrey));
     --text-color-section-title: var(--darkAqua);
+    --text-color-section-title-2: var(--blue);
     --text-color-section-text: var(--aqua);
+    --bg-card-1: var(--grey);
   }
 
   .bg-main-title {
@@ -118,12 +126,28 @@ const GlobalStyle = createGlobalStyle`
     background: var(--bg-section-1);
   }
 
+  .bg-section-3 {
+    background: var(--bg-section-3);
+  }
+
+  .bg-card-1 {
+    background-color: var(--light);
+  }
+  
+  .bg-card-2 {
+    background: linear-gradient(to right, var(--darkBlue), var(--lightDarkBlue));
+  }
+
   .text-color-section-title {
     color: var(--text-color-section-title);
   }
 
   .text-color-section-text {
     color: var(--text-color-section-text)!important;
+  }
+
+  .text-color-section-title-2 {
+    color: var(--text-color-section-title-2);
   }
 
   * {
