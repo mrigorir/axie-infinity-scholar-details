@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    /* colors */
+    /* colores */
 
     --purple: #8f68df;
     --light: #ebe9e9;
