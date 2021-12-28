@@ -19,7 +19,7 @@ function Slp({ slp, stored }) {
                   { title === 'Player ronin' ? data : Math.round(slp[0].data * (data / 100)) }
                 </Card.Text>
               </div>
-              <Card.Img src={url} width={100} height={100} className="ms-4" />
+              <Card.Img src={url} width={100} height={100} className="ms-2" />
             </Card.Body>
           </Card>
         );

@@ -29,17 +29,17 @@ const useDatahooks = () => {
       {
         title: 'Player ronin',
         data: ronin,
-        url: 'https://lh3.google.com/u/0/d/1n_wEUbLJolvO77H7KECKWCFdx8ztSAiW=w200-h190-p-k-nu-iv1',
+        url: 'https://drive.google.com/uc?export=view&id=1n_wEUbLJolvO77H7KECKWCFdx8ztSAiW&rl',
       },
       {
         title: 'Manager SLP earned',
         data: manager,
-        url: 'https://lh3.google.com/u/0/d/1eacnHT2KWC1YBkcPjNdT1ZsIDY8U6vHF=w200-h190-p-k-nu-iv1',
+        url: 'https://drive.google.com/uc?export=view&id=1eacnHT2KWC1YBkcPjNdT1ZsIDY8U6vHF&rl',
       },
       {
         title: 'Scholar SLP earned',
         data: scholar,
-        url: 'https://lh3.google.com/u/0/d/16V_sm0rP5rdw_pRoCAY8mSpU0qEfQhYe=w200-h190-p-k-nu-iv1',
+        url: 'https://drive.google.com/uc?export=view&id=16V_sm0rP5rdw_pRoCAY8mSpU0qEfQhYe&rl',
       },
     );
     e.preventDefault();
