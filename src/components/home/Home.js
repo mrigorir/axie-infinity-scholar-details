@@ -1,6 +1,8 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Row, Col } from 'react-bootstrap';
+import {
+  Row, Col, Table,
+} from 'react-bootstrap';
 import useDatahooks from '../../hooks/useDatahooks';
 import Slp from '../slp/Slp';
 import Mmr from '../mmr/Mmr';
@@ -81,27 +83,37 @@ function Home() {
         <Col md={12} className="p-4 bg-section-3 bg-darkBlue">
           {axies.results === 0 ? <Loading />
             : (
-              <ul>
-                Total:
-                {axies[0].total}
-                {axies[0].results.map((axie) => {
-                  const {
-                    id, name, breedCount, image, parts,
-                  } = axie;
-                  return (
-                    <li key={uuidv4()}>
-                      <Axie
-                        id={id}
-                        name={name}
-                        type={axie.class}
-                        breedCount={breedCount}
-                        image={image}
-                        parts={parts}
-                      />
-                    </li>
-                  );
-                })}
-              </ul>
+              <Table hover className="text-center bg-table text-color-table-title axie-list" responsive>
+                <thead>
+                  <tr>
+                    <th className="p-md-4 fs-4">Axie</th>
+                    <th className="p-md-4 fs-4">ID</th>
+                    <th className="p-md-4 fs-4">Name</th>
+                    <th className="p-md-4 fs-4">Type</th>
+                    <th className="p-md-4 fs-4">Breed Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {axies[0].results.map((axie) => {
+                    const {
+                      id, name, breedCount, image, parts,
+                    } = axie;
+                    return (
+                      <tr key={uuidv4()} className="bg-table">
+                        <Axie
+                          id={id}
+                          name={name}
+                          type={axie.class}
+                          breedCount={breedCount}
+                          image={image}
+                          parts={parts}
+                          key={uuidv4()}
+                        />
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
             )}
         </Col>
       </Row>

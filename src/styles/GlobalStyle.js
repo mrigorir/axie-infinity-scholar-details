@@ -3,10 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     /* colores */
-
+    --white: #fff;
     --purple: #8f68df;
     --light: #ebe9e9;
     --lightGrey: #ebe9e9;
+    --greenGrey: #0c4ebb;
     --blue: #84a2d3;
     --grey: #ddd;
     --medGrey: #585656;
@@ -20,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
     --lightBlue: #c4d7f5;
     --medBlue: #5583df;
     --lightDarkBlue: #1563d7;
+    --purpleBlue: #5b91e9;
+    --darkPurple: #310c7c;
 
     /* shadows */
 
@@ -49,10 +52,14 @@ const GlobalStyle = createGlobalStyle`
     --bg-main-title: var(--medBlue);
     --color-main-title: white;
     --bg-section-1: linear-gradient(to right, var(--blue), var(--medBlue));
+    --bg-section-2: var(--lightBlue);
     --bg-section-3: linear-gradient(to right, var(--medBlue), var(--darkBlue));
+    --bg-table: var(--purpleBlue);
     --text-color-section-title: var(--darkMedBlue);
     --text-color-section-title-2: var(--blue);
     --text-color-section-text: var(--purple);
+    --text-color-table-text: var(--greenGrey);
+    --text-color-table-title: var(--white);
     --bg-card-1: var(--ligh);
   }
 
@@ -86,10 +93,13 @@ const GlobalStyle = createGlobalStyle`
     --bg-main-title: var(--medBlack);
     --color-main-title: var(--aqua);
     --bg-section-1: var(--grey);
+    --bg-section-2: var(--grey);
     --bg-section-3: linear-gradient(to right, var(--grey), var(--medGrey));
+    --bg-table: var(--grey);
     --text-color-section-title: var(--darkAqua);
     --text-color-section-title-2: var(--blue);
     --text-color-section-text: var(--aqua);
+    --text-color-table-title: var(--darkPurple);
     --bg-card-1: var(--grey);
   }
 
@@ -126,8 +136,16 @@ const GlobalStyle = createGlobalStyle`
     background: var(--bg-section-1);
   }
 
+  .bg-section-2 {
+    background: var(--bg-section-2);
+  }
+
   .bg-section-3 {
     background: var(--bg-section-3);
+  }
+
+  .bg-table {
+    background-color: var(--bg-table);
   }
 
   .bg-card-1 {
@@ -150,6 +168,14 @@ const GlobalStyle = createGlobalStyle`
     color: var(--text-color-section-title-2);
   }
 
+  .text-color-table-text {
+    color: var(--text-color-table-text)!important;
+  }
+
+  .text-color-table-title {
+    color: var(--text-color-table-title)!important;
+  }
+
   * {
     box-sizing: border-box;
     font-family: 'Abel', sans-serif;
@@ -169,8 +195,9 @@ const GlobalStyle = createGlobalStyle`
     text-overflow: ellipsis;
   }
 
-  .half-circled {
-    border-radius: 30px;
+  .half-circled,
+  .axie-list {
+    border-radius: 30px!important;
   }
 
   .half-circled:hover {
