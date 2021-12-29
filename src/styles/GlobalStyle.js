@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     --purple: #8f68df;
     --light: #ebe9e9;
     --lightGrey: #ebe9e9;
-    --greenGrey: #0c4ebb;
+    --redGrey: #0c4ebb;
     --blue: #84a2d3;
     --grey: #ddd;
     --medGrey: #585656;
@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
     --text-color-section-title: var(--darkMedBlue);
     --text-color-section-title-2: var(--blue);
     --text-color-section-text: var(--purple);
-    --text-color-table-text: var(--greenGrey);
+    --text-color-table-text: var(--redGrey);
     --text-color-table-title: var(--white);
     --bg-card-1: var(--ligh);
   }
