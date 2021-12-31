@@ -19,7 +19,7 @@ function Mmr({ mmr }) {
                   { data }
                 </Card.Text>
               </div>
-              <Card.Img src={url} width={100} height={100} className="ms-4" />
+              <Card.Img src={url} width={100} height={100} className="ms-4 imgs" />
             </Card.Body>
           </Card>
         );

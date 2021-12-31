@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, Table } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
+import Accord from './Accord';
 
 function Axie({ axies }) {
   const axieInfo = axies[0].results;
-  console.log(axieInfo);
+
   return (
     <>
-      <Table hover className="text-center bg-table text-color-table-title axie-list" responsive>
+      <Table hover className="text-center bg-table text-color-table-title axie-list">
         <thead>
           <tr>
             <th className="p-md-4 fs-4">Axie</th>
@@ -21,12 +22,13 @@ function Axie({ axies }) {
         <tbody>
           {axieInfo.map((axie) => {
             const {
-              id, name, breedCount, image, type,
+              id, name, breedCount, image, parts,
             } = axie;
             return (
               <tr key={uuidv4()} className="bg-table">
-                <td className="p-0 fs-5 fw-bold">
-                  <Image fluid src={image} width={150} height={150} alt="Axie picture" className="" />
+                <td className="fs-5 fw-bold d-flex align-items-center justify-content-center">
+                  <Accord parts={parts} />
+                  <Image fluid src={image} width={150} height={150} alt="Axie picture" className="axieInfo" />
                 </td>
                 <td className="p-md-5 fs-5 fw-bold text-color-table-text">
                   {name}
@@ -35,7 +37,7 @@ function Axie({ axies }) {
                   {id}
                 </td>
                 <td className="p-md-5 fs-5 fw-bold text-color-table-text">
-                  {type}
+                  {axie.class}
                 </td>
                 <td className="p-md-5 fs-5 fw-bold text-color-table-text">
                   {breedCount}
@@ -45,17 +47,6 @@ function Axie({ axies }) {
           })}
         </tbody>
       </Table>
-      parts:
-      {axieInfo.map((axie) => {
-        const { parts } = axie;
-        return (
-          parts.map((part) => (
-            <p key={uuidv4()}>
-              {part.name}
-            </p>
-          ))
-        );
-      })}
     </>
   );
 }
