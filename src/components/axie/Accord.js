@@ -11,7 +11,7 @@ function CustomToggle({ children, eventKey }) {
 
   return (
     <>
-      <Button variant="primary" type="button" onClick={toggleOnclick}>
+      <Button type="button" onClick={toggleOnclick} className="bg-table border-0 not-hover bg-transparent">
         {children}
       </Button>
     </>
@@ -28,12 +28,12 @@ function Accord({ parts }) {
       <Accordion.Collapse eventKey="0">
         <div>
           {axieParts.map((part) => (
-            <p key={uuidv4()}>
+            <span key={uuidv4()} className="mt-3 d-flex align-items-center rounded text-white fw-bold bg-axie-parts">
               <Image src={part.url} alt="some axie parts" width={50} height={50} />
               <span className="mx-4">
                 {part.data}
               </span>
-            </p>
+            </span>
           ))}
         </div>
       </Accordion.Collapse>

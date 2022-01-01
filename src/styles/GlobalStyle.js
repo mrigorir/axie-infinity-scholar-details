@@ -60,7 +60,8 @@ const GlobalStyle = createGlobalStyle`
     --text-color-section-text: var(--purple);
     --text-color-table-text: var(--redGrey);
     --text-color-table-title: var(--white);
-    --bg-card-1: var(--ligh);
+    --bg-card-1: var(--light);
+    --bg-axie-parts: var(--darkMedBlue);
   }
 
   [data-theme="dark"] {
@@ -101,6 +102,7 @@ const GlobalStyle = createGlobalStyle`
     --text-color-section-text: var(--aqua);
     --text-color-table-title: var(--darkPurple);
     --bg-card-1: var(--grey);
+    --bg-axie-parts: var(--darkPurple);
   }
 
   .bg-main-title {
@@ -154,6 +156,10 @@ const GlobalStyle = createGlobalStyle`
   
   .bg-card-2 {
     background: linear-gradient(to right, var(--darkBlue), var(--lightDarkBlue));
+  }
+
+  .bg-axie-parts {
+    background-color: var(--bg-axie-parts);
   }
 
   .text-color-section-title {
@@ -260,6 +266,15 @@ const GlobalStyle = createGlobalStyle`
       color: var(--darkGrey);
     }
 
+    .not-hover,
+    .not-hover: hover,
+    .not-hover: focus {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+
     @media screen and (max-width: 520px) {
       .imgs {
         width: 60px;
@@ -290,7 +305,7 @@ const GlobalStyle = createGlobalStyle`
       td:before { 
         /* Now like a table header */
         position: absolute;
-        /* Top/left values mimic padding */
+
         top: 6px;
         left: 6px;
         width: 45%; 
