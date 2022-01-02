@@ -305,7 +305,7 @@ const GlobalStyle = createGlobalStyle`
       td:before { 
         /* Now like a table header */
         position: absolute;
-
+        /* Top/left values mimic padding */
         top: 6px;
         left: 6px;
         width: 45%; 
