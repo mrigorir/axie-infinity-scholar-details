@@ -8,7 +8,8 @@ const GlobalStyle = createGlobalStyle`
     --light: #ebe9e9;
     --lightGrey: #ebe9e9;
     --lightMedGrey: #6c6f70;
-    --redGrey: #0c4ebb;
+    --redGrey: #ebe2e3;
+    --redLightGrey: #d35965;
     --blue: #84a2d3;
     --grey: #7c7c7c;
     --medGrey: #585656;
@@ -42,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
     --topBarBorder: var(--aqua);
     --textForm: white;
     --trackButtonModal: var(--medGrey);
+    --close-button-modal: var(--darkMedBlue);
     --bgOuterModal: var(--blue);
     --bgInnerModal: var(--grey);
     --labelTextModal: var(--medGrey);
@@ -66,6 +68,8 @@ const GlobalStyle = createGlobalStyle`
     --bg-card-1: var(--light);
     --bg-card-2: linear-gradient(to right, var(--darkBlue), var(--lightDarkBlue));
     --bg-axie-parts: var(--darkMedBlue);
+    --bg-error-message: var(--redGrey);
+    --error-message-text: var(--redLightGrey);
   }
 
   [data-theme="dark"] {
@@ -85,6 +89,7 @@ const GlobalStyle = createGlobalStyle`
     --textForm: white;
     --trackButton: linear-gradient(to right, var(--darkAqua), var(--darkMedBlue));
     --trackButtonModal: var(--darkAqua);
+    --close-button-modal: var(--highDarkAqua);
     --bgOuterModal: var(--darkGrey);
     --bgInnerModal: var(--medGrey);
     --labelTextModal: var(--aqua);
@@ -125,6 +130,10 @@ const GlobalStyle = createGlobalStyle`
 
   .track-button {
     background: var(--trackButton);
+  }
+
+  .close-button-modal {
+    background-color: var(--close-button-modal);
   }
   
   .bg-main-content {
@@ -168,6 +177,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--bg-axie-parts);
   }
 
+  .bg-error-message {
+    background-color: var(--bg-error-message);
+  }
+
   .text-color-section-title {
     color: var(--text-color-section-title);
   }
@@ -186,6 +199,10 @@ const GlobalStyle = createGlobalStyle`
 
   .text-color-table-title {
     color: var(--text-color-table-title)!important;
+  }
+
+  .error-message-text {
+    color: var(--error-message-text);
   }
 
   * {
@@ -210,6 +227,12 @@ const GlobalStyle = createGlobalStyle`
   .half-circled,
   .axie-list {
     border-radius: 30px!important;
+  }
+
+  .circled {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
   }
 
   .half-circled:hover {
@@ -279,6 +302,16 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       outline: none;
       box-shadow: none;
+    }
+
+    .swal-button,
+    .swal-button:hover {
+      background-color: #e53e21!important;
+      opacity: 1;
+    }
+
+    .error-title {
+      text-align: center!important;
     }
 
     @media screen and (max-width: 520px) {

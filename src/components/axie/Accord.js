@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import getParts from './axieParts';
 
 function CustomToggle({ children, eventKey }) {
-  const toggleOnclick = useAccordionButton(eventKey, () => console.log('Sweet!'));
+  const toggleOnclick = useAccordionButton(eventKey, () => 'Sweet!');
 
   return (
     <>

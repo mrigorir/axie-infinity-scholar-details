@@ -18,12 +18,14 @@ const useDatahooks = () => {
   const [errorMessageSLP, setErrorMessageSLP] = useState('');
   const [errorMessageAxies, setErrorMessageAxies] = useState('');
   const [percentage, setPercentage] = useState(100);
+  let string = '';
 
   const handleRonin = (e, roninRef, managerPerRef, scholarPerRef) => {
     const ronin = roninRef.current.value;
     const manager = managerPerRef.current.value;
     const scholar = scholarPerRef.current.value;
     const scholarDetails = [];
+    setPercentage(100);
 
     scholarDetails.push(
       {
@@ -43,16 +45,18 @@ const useDatahooks = () => {
       },
     );
     e.preventDefault();
-    dispatch(getSlpAction(ronin)).catch((error) => setErrorMessageSLP(`SLP: ${error.message}`));
-    dispatch(getMmrAction(ronin)).catch((error) => setErrorMessageMMR(`MMR: ${error.message}`));
-    dispatch(getAxiesAction(ronin)).catch((error) => setErrorMessageAxies(`Axies data: ${error.message}`));
+    string = ronin.replace(/ronin:/g, '0x');
+    dispatch(getSlpAction(string)).catch((error) => setErrorMessageSLP(`SLP: ${error.message}`));
+    dispatch(getMmrAction(string)).catch((error) => setErrorMessageMMR(`MMR: ${error.message}`));
+    dispatch(getAxiesAction(string)).catch((error) => setErrorMessageAxies(`Axies data: ${error.message}`));
     localStorage.setItem(LOCAL_STORAGE_SCHOLAR_DETAILS, JSON.stringify(scholarDetails));
   };
 
   const handlePercentage = () => {
-    const managerCurrentPer = 100 - (scholarPerRef.current.value);
+    const scholarValue = scholarPerRef.current.value;
+    const managerCurrentPer = 100 - (scholarValue);
     const button = document.getElementById('submitDetails');
-    if (managerCurrentPer > 100 || managerCurrentPer < 0 || Number.isNaN(managerCurrentPer)) {
+    if (managerCurrentPer >= 100 || managerCurrentPer <= 0 || Number.isNaN(managerCurrentPer)) {
       setPercentage('Invalid format.');
       button.setAttribute('disabled', true);
     } else {
@@ -63,9 +67,10 @@ const useDatahooks = () => {
 
   useEffect(() => {
     if (storedDetails && storedDetails[0].data !== null) {
-      dispatch(getSlpAction(storedDetails[0].data));
-      dispatch(getMmrAction(storedDetails[0].data));
-      dispatch(getAxiesAction(storedDetails[0].data));
+      string = storedDetails[0].data.replace(/ronin:/g, '0x');
+      dispatch(getSlpAction(string)).catch((error) => setErrorMessageSLP(`SLP: ${error.message}`));
+      dispatch(getMmrAction(string)).catch((error) => setErrorMessageMMR(`MMR: ${error.message}`));
+      dispatch(getAxiesAction(string)).catch((error) => setErrorMessageAxies(`Axies data: ${error.message}`));
     }
   }, []);
 

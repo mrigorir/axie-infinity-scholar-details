@@ -14,6 +14,7 @@ const FormModal = ({
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <>
       <Wrapper>
@@ -32,11 +33,11 @@ const FormModal = ({
           <Form onSubmit={(e) => handleRonin(e, roninRef, managerPerRef, scholarPerRef)}>
             <Form.Group className="p-3">
               <Form.Label> Ronin address with 0x format </Form.Label>
-              <Form.Control size="lg" type="text" ref={roninRef} required placeholder="0x0a10f1c0f1959..." />
+              <Form.Control size="lg" type="text" ref={roninRef} placeholder="0x0a10f1c0f1959..." required />
             </Form.Group>
             <Form.Group className="p-3">
               <Form.Label> Scholar Percentage </Form.Label>
-              <Form.Control size="lg" type="text" ref={scholarPerRef} placeholder="0" required onKeyUp={handlePercentage} />
+              <Form.Control size="lg" type="text" ref={scholarPerRef} placeholder="0" onKeyUp={handlePercentage} required />
             </Form.Group>
             <Form.Group className="mb-3 p-3">
               <Form.Label> Manager Percentage </Form.Label>
@@ -48,9 +49,15 @@ const FormModal = ({
                   type="submit"
                   className="primary ms-3 fw-bold border-0 track-button-modal"
                   id="submitDetails"
-                  onClick={handleClose}
                 >
                   Track
+                </Button>
+                <Button
+                  onClick={handleClose}
+                  className="btn btn-primary ms-3 fw-bold border-0 px-5 fs-5 close-button-modal"
+                  id="submitDetails"
+                >
+                  Close
                 </Button>
               </Form.Group>
             </ModalButtonWrapper>

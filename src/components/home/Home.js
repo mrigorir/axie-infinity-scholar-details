@@ -46,7 +46,7 @@ function Home() {
       </Row>
       <Row>
         <Col md={12} className="p-4 bg-section-1">
-          {(mmr[0].data === 0 || slp[0].data === 0) ? <Loading />
+          {(mmr[0].elo === 0 || slp[0].totalSLP === 0) ? <Loading />
             : (
               <CardWrapper>
                 <Slp slp={slp} stored={storedDetails} />
@@ -63,7 +63,7 @@ function Home() {
       </Row>
       <Row>
         <Col md={12} className="py-4 bg-section-2">
-          {(mmr[0].data === 0 || slp[0].data === 0) ? <Loading />
+          {(mmr[0].elo === 0 || slp[0].totalSLP === 0) ? <Loading />
             : (
               <CardWrapper>
                 <Mmr mmr={mmr} />
