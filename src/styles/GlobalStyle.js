@@ -7,14 +7,17 @@ const GlobalStyle = createGlobalStyle`
     --purple: #8f68df;
     --light: #ebe9e9;
     --lightGrey: #ebe9e9;
+    --lightMedGrey: #6c6f70;
     --redGrey: #0c4ebb;
     --blue: #84a2d3;
-    --grey: #ddd;
+    --grey: #7c7c7c;
     --medGrey: #585656;
     --darkGrey: #1c1c1c;
     --medBlack: #303030;
-    --aqua: #3feaf1;
-    --darkAqua: #1e7b8b;
+    --lightAqua: #d5dcdd;
+    --aqua: #43ddbf;
+    --darkAqua: #29a9bf;
+    --highDarkAqua: #054550;
     --darkMedBlue: #1b59b1;
     --darkBlue: #082d64;
     --mainContent: var(--lightBlue);
@@ -61,6 +64,7 @@ const GlobalStyle = createGlobalStyle`
     --text-color-table-text: var(--redGrey);
     --text-color-table-title: var(--white);
     --bg-card-1: var(--light);
+    --bg-card-2: linear-gradient(to right, var(--darkBlue), var(--lightDarkBlue));
     --bg-axie-parts: var(--darkMedBlue);
   }
 
@@ -93,16 +97,18 @@ const GlobalStyle = createGlobalStyle`
     --bodyTextTitle: var(--aqua);
     --bg-main-title: var(--medBlack);
     --color-main-title: var(--aqua);
-    --bg-section-1: var(--grey);
-    --bg-section-2: var(--grey);
-    --bg-section-3: linear-gradient(to right, var(--grey), var(--medGrey));
-    --bg-table: var(--grey);
+    --bg-section-1: linear-gradient(to right, var(--lightMedGrey), var(--highDarkAqua));
+    --bg-section-2: var(--medGrey);
+    --bg-section-3: linear-gradient(to right, var(--grey), var(--medBlack));
+    --bg-card-1: var(--medGrey);
+    --bg-card-2: linear-gradient(to right, var(--darkGrey), var(--medBlack));
     --text-color-section-title: var(--darkAqua);
     --text-color-section-title-2: var(--blue);
     --text-color-section-text: var(--aqua);
-    --text-color-table-title: var(--darkPurple);
-    --bg-card-1: var(--grey);
-    --bg-axie-parts: var(--darkPurple);
+    --text-color-table-title: var(--aqua);
+    --text-color-table-text: var(--darkAqua);
+    --bg-table: var(--darkGrey);
+    --bg-axie-parts: var(--highDarkAqua);
   }
 
   .bg-main-title {
@@ -151,11 +157,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .bg-card-1 {
-    background-color: var(--light);
+    background-color: var(--bg-card-1);
   }
   
   .bg-card-2 {
-    background: linear-gradient(to right, var(--darkBlue), var(--lightDarkBlue));
+    background: var(--bg-card-2);
   }
 
   .bg-axie-parts {
