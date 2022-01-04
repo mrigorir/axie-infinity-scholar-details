@@ -75,8 +75,8 @@ const GlobalStyle = createGlobalStyle`
   [data-theme="dark"] {
     /* shadows */
 
-    --shadow-main-title: rgba(0, 0, 0, 0.5);
     --boxShadowBody: inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
+    --shadow-main-title: rgba(0, 0, 0, 0.5);
 
     /* loader */
 
