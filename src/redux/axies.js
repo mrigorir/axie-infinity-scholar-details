@@ -9,7 +9,7 @@ const initialState = {
 // action indicator
 const GET_AXIES_DATA = 'scholar/details/GET_AXIES_DATA;';
 
-// action
+// action creator
 const getAxiesAction = (id) => async (dispatch) => {
   const axies = await getAxies(id);
   const axiesData = [

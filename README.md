@@ -1,6 +1,6 @@
 # Scholar Axie details
 
-> This project handles the free APIs of Axie Infinity NFT game in order to get user's data info through the id (ronin), like SLP, MMR, and each Axies data, using REact and Redux.
+> This project handles the free APIs of Axie Infinity NFT game in order to get user's data info through the id (ronin), like SLP, MMR, and each Axies data, using React and Redux.
 
 ## This project was built with:
 
@@ -87,7 +87,7 @@ To make sure the linters' checks using Github Actions work properly, you should 
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/mrigorir/react-todo-app/issues)
+Feel free to check the [issues page](https://github.com/mrigoriraxie-infinity-scholar-details/issues)
 
 
 ## Show your support
@@ -97,7 +97,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Creation inspired on [tracker.axie.management](hhttps://tracker.axie.management/)
+- Creation inspired on [tracker.axie.management](https://tracker.axie.management/)
 
 
 ## 📝 License
